@@ -4,7 +4,7 @@
 /* EXAMPLE TOUR */
 /* ============ */
 var tour = {
-  id: 'hello-hopscotch',
+  id: 'jstart-hopscotch',
   steps: [
     {
       target: 'ibm-leadspace-body',
