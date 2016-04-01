@@ -21,6 +21,34 @@ var tour = {
       arrowOffset: 60
     },
     {
+      target: document.querySelectorAll('.data-page-icon.services')[0],
+      title: 'Services',
+      content: 'Explore getting data into your services',
+      placement: 'right',
+      arrowOffset: 60
+    },
+    {
+      target: document.querySelectorAll('.data-page-icon.data')[0],
+      title: 'Data',
+      content: 'View and Edit connections to an existing data source',
+      placement: 'right',
+      arrowOffset: 60
+    },
+    {
+      target: document.querySelectorAll('.data-page-icon.analytics')[0],
+      title: 'Analytics',
+      content: 'Accelerate your analytics with Spark using notebooks in Python or Scala',
+      placement: 'right',
+      arrowOffset: 60
+    },
+    {
+      target: document.querySelectorAll('.data-page-icon.exchange')[0],
+      title: 'Exchange',
+      content: 'Unlock the power of your data by exploring and discovering 200+ Datasets via the Analytics Exchange.',
+      placement: 'right',
+      arrowOffset: 60
+    },
+    {
       target: document.querySelectorAll('.notebooks-desc')[0],
       title: 'Precipitation Analysis',
       content: 'If you\'re looking for a simple example, checkout this Precipitation Analysis notebook',
