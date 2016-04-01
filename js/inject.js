@@ -22,7 +22,17 @@ chrome.extension.sendMessage({}, function(response) {
                return true;
             }
         });
-        console.log(prefix + "Number of Tourlets available is : " + tourlets.length);
+        console.log(prefix + "Number of Tourlets discovered : " + tourlets.length);
+        while (tourlets[i]) {
+            // https://rawgit.com/joshisa/huemix-blopscotch/master/ + tourlets.path
+            proxyXHR.get('https://rawgit.com/joshisa/huemix-blopscotch/master/' + tourlets[i].path).onSuccess(function (data) {
+                  console.log(prefix + "Loading " + tourlets[i].path);
+                  console.log(data);
+            }).onFailure(function (status) {
+                 alert("HTTP Error " + status + " while retrieving data for the Huemix Blopscotch Tour Chrome Plugin");
+            });
+            i++;
+        }
       }).onFailure(function (status) {
         alert("HTTP Error " + status + " while retrieving data for the Huemix Blopscotch Tour Chrome Plugin");
       });
