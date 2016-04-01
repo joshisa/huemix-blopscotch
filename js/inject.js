@@ -17,7 +17,7 @@ chrome.extension.sendMessage({}, function(response) {
       // https://api.github.com/repos/joshisa/huemix-blopscotch/git/trees/master?recursive=1
       proxyXHR.get('https://api.github.com/repos/joshisa/huemix-blopscotch/git/trees/master?recursive=1').onSuccess(function (data) {
         var arr = JSON.parse(data);
-        var tourlets = arr.filter(function (el) {
+        var tourlets = arr.tree.filter(function (el) {
             if ('path' in el && typeof(el.path) === 'string' && el.path.indexOf("tourlet/") == 0) {
                return true;
             }
