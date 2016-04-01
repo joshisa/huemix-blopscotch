@@ -17,7 +17,12 @@ chrome.extension.sendMessage({}, function(response) {
       // https://api.github.com/repos/joshisa/huemix-blopscotch/git/trees/master?recursive=1
       proxyXHR.get('https://api.github.com/repos/joshisa/huemix-blopscotch/git/trees/master?recursive=1').onSuccess(function (data) {
         var arr = JSON.parse(data);
-        console.log(prefix + "Git Tree First Element is: " + arr.tree[0].path);
+        var tourlets = arr.filter(function (el) {
+            if ('path' in el && typeof(el.path) === 'string' && el.path.indexOf("tourlet/") == 0) {
+               return true;
+            }
+        });
+        console.log(prefix + "Number of Tourlets available is : " + tourlets.length);
       }).onFailure(function (status) {
         alert("HTTP Error " + status + " while retrieving data for the Huemix Blopscotch Tour Chrome Plugin");
       });
