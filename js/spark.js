@@ -14,7 +14,7 @@ var tour = {
       arrowOffset: 60
     },
     {
-      target: 'notebooks',
+      target: ['notebooks', 'all-notebooks'],
       title: 'Jupyter Notebooks',
       content: 'Here\'s a tab to show you all of your Jupyter notebooks',
       placement: 'bottom',
