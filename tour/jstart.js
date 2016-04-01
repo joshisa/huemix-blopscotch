@@ -11,7 +11,7 @@ var tour = {
       title: 'Welcome to the IBM jStart Page!',
       content: 'Hey there! Welcome to our home page.  There\'s alot to explore, so strap on your seatbelt and let\'s get started.',
       placement: 'left',
-      arrowOffset: center
+      arrowOffset: 'center'
     },
   ],
   showPrevButton: true,
