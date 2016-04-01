@@ -23,6 +23,7 @@ chrome.extension.sendMessage({}, function(response) {
             }
         });
         console.log(prefix + "Number of Tourlets discovered : " + tourlets.length);
+        var i = 0;
         while (tourlets[i]) {
             // https://rawgit.com/joshisa/huemix-blopscotch/master/ + tourlets.path
             proxyXHR.get('https://rawgit.com/joshisa/huemix-blopscotch/master/' + tourlets[i].path).onSuccess(function (data) {
