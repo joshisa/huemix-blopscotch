@@ -5,9 +5,11 @@ s.onload = function() {
 };
 (document.head || document.documentElement).appendChild(s);
 
+document.body.isTourletLoaded = 0;
+
 chrome.extension.sendMessage({}, function(response) {
     var readyStateCheckInterval = setInterval(function() {
-      if (document.readyState === "complete") {
+      if (document.readyState === "complete" && document.body.isTourletLoaded == 0) {
           clearInterval(readyStateCheckInterval);
           var prefix = "[Huemix Blopscotch]] ";
           console.log(prefix + "current page URL is: " + location.href);
@@ -31,6 +33,8 @@ chrome.extension.sendMessage({}, function(response) {
                   });
                   i++;
               }
+              // Let's only load this stuff once for a given dom
+              document.body.isTourletLoaded = 1;
           }).onFailure(function (status) {
             alert("HTTP Error " + status + " while retrieving data for the Huemix Blopscotch Tour Chrome Plugin");
           });
