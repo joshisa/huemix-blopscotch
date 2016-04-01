@@ -1,4 +1,4 @@
-var jstart = /^https?:\/\/(*.?)\.ibm\.com\/(.*?)\/ebusiness\/jstart\/(.*?)/;
+var jstart = /^https?:\/\/(.*?)\.ibm\.com\/(.*?)\/ebusiness\/jstart\/(.*?)/;
 if (jstart.test(location.href)) {
 		console.log(prefix + "Loading tour button on IBM jStart Page");
 		// Let's attach a Take Tour button to the page
