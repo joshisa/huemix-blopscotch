@@ -44,7 +44,7 @@ chrome.extension.sendMessage({}, function(response) {
     // </div>
     if (spark.test(location.href)) {
       console.log(prefix + "Loading tour button on Working with Notebooks and Spark Instances Dashboard");
-      var notebookspage = document.getElementsByClassName("NotebooksPage");
+      var notebookspage = document.getElementsByClassName("button-area");
       var b = document.createElement('div');
       b.setAttribute('id', 'startTourBtn');
       b.setAttribute('class', 'button-area');
