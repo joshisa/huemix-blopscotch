@@ -7,7 +7,7 @@ s.onload = function() {
 
 chrome.extension.sendMessage({}, function(response) {
     var readyStateCheckInterval = setInterval(function() {
-      if (document.readyState === "complete" && document.body.isTourletLoaded == 0) {
+      if (document.readyState === "complete") {
           clearInterval(readyStateCheckInterval);
           var prefix = "[Huemix Blopscotch]] ";
           console.log(prefix + "current page URL is: " + location.href);
