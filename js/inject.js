@@ -13,7 +13,14 @@ chrome.extension.sendMessage({}, function(response) {
 			var spark = /^https?:\/\/(console)\.ng\.bluemix\.net\/data\/analytics(.*?)/;
 			var demo = /^file?:\/\/\/(.*?)hopscotch(.*?)/;
 			console.log(prefix + "current page URL is: " + location.href);
-			
+		  
+      // https://api.github.com/repos/joshisa/huemix-blopscotch/git/trees/master?recursive=1
+      proxyXHR.get('https://api.github.com/repos/joshisa/huemix-blopscotch/git/trees/master?recursive=1').onSuccess(function (data) {
+        alert(data);
+      }).onFailure(function (status) {
+        alert("HTTP Error " + status + " while retrieving data for the Huemix Blopscotch Tour Chrome Plugin");
+      });
+
 			if (demo.test(location.href)) {
 				console.log(prefix + "Loading demo.js tour");
 				var t = document.createElement ('script');
