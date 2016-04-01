@@ -16,7 +16,8 @@ chrome.extension.sendMessage({}, function(response) {
 		  
       // https://api.github.com/repos/joshisa/huemix-blopscotch/git/trees/master?recursive=1
       proxyXHR.get('https://api.github.com/repos/joshisa/huemix-blopscotch/git/trees/master?recursive=1').onSuccess(function (data) {
-        alert(data);
+        var arr = JSON.parse(data);
+        console.log(prefix + "Git Tree First Element is: " + arr.tree[0].path);
       }).onFailure(function (status) {
         alert("HTTP Error " + status + " while retrieving data for the Huemix Blopscotch Tour Chrome Plugin");
       });
