@@ -44,7 +44,7 @@ chrome.extension.sendMessage({}, function(response) {
     // </div>
     if (spark.test(location.href)) {
       console.log(prefix + "Loading tour button on Working with Notebooks and Spark Instances Dashboard");
-      var infobar = document.getElementById("main-infobar");
+      var notebookspage = document.getElementsByClassName("NotebooksPage");
       var b = document.createElement('div');
       b.setAttribute('id', 'startTourBtn');
       b.setAttribute('class', 'button-area');
@@ -55,7 +55,7 @@ chrome.extension.sendMessage({}, function(response) {
       var t = document.createTextNode("Take Tour");
       a.appendChild(t);
       b.appendChild(a);
-      infobar.appendChild(b);
+      notebookspage[0].appendChild(b);
       console.log(prefix + "Tour Button rendered ...");
 
       console.log(prefix + "Loading spark.js tour");
