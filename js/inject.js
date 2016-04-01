@@ -48,7 +48,7 @@ chrome.extension.sendMessage({}, function(response) {
       var b = document.createElement('div');
       b.setAttribute('id', 'startTourBtn');
       b.setAttribute('class', 'button-area');
-      b.setAttribute('style', 'position:absolute;float:right;top:7%;right:10%;')
+      b.setAttribute('style', 'position:relative;float:right;');
       var a = document.createElement('a');
       a.setAttribute('class','button primary');
       a.setAttribute('href', '#');
