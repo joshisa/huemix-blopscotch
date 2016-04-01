@@ -16,8 +16,6 @@ if (spark.test(location.href)) {
 		newnotebookbutton[0].appendChild(b);
 		console.log(prefix + "Tour Button injected ...");
 		
-		// Let's load the tour for this spark experience
-		console.log(prefix + "Loading spark.js tour");
 		var t = document.createElement ('script');
 		t.src = "https://rawgit.com/joshisa/huemix-blopscotch/master/js/spark.js";
 		document.body.appendChild (t);
