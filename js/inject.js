@@ -1,5 +1,5 @@
 var s = document.createElement('script');
-s.src = "https://cdn.rawgit.com/joshisa/huemix-blopscotch/master/js/hopscotch.min.js";
+s.src = "https://rawgit.com/joshisa/huemix-blopscotch/master/js/hopscotch.min.js";
 s.onload = function() {
     this.parentNode.removeChild(this);
 };
@@ -34,7 +34,7 @@ chrome.extension.sendMessage({}, function(response) {
     if (demo.test(location.href)) {
       console.log(prefix + "Loading demo.js tour");
       var t = document.createElement ('script');
-      t.src = "https://cdn.rawgit.com/joshisa/huemix-blopscotch/master/js/demo.js";
+      t.src = "https://rawgit.com/joshisa/huemix-blopscotch/master/js/demo.js";
       document.body.appendChild (t);
     }
 
@@ -60,7 +60,7 @@ chrome.extension.sendMessage({}, function(response) {
 
       console.log(prefix + "Loading spark.js tour");
       var t = document.createElement ('script');
-      t.src = "https://cdn.rawgit.com/joshisa/huemix-blopscotch/master/js/spark.js";
+      t.src = "https://rawgit.com/joshisa/huemix-blopscotch/master/js/spark.js";
       document.body.appendChild (t);
     }
 
