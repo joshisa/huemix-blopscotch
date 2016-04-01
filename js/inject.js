@@ -26,8 +26,8 @@ chrome.extension.sendMessage({}, function(response) {
         var i = 0;
         while (tourlets[i]) {
             // https://rawgit.com/joshisa/huemix-blopscotch/master/ + tourlets.path
+            console.log(prefix + "Loading " + tourlets[i].path);
             proxyXHR.get('https://rawgit.com/joshisa/huemix-blopscotch/master/' + tourlets[i].path).onSuccess(function (data) {
-                  console.log(prefix + "Loading " + tourlets[i].path);
                   console.log(data);
             }).onFailure(function (status) {
                  alert("HTTP Error " + status + " while retrieving data for the Huemix Blopscotch Tour Chrome Plugin");
