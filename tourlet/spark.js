@@ -5,10 +5,10 @@ if (spark.test(location.href)) {
 		var newnotebookbutton = document.getElementsByClassName("button-area");
 		var b = document.createElement('div');
 		b.setAttribute('id', 'startTourBtn');
-		b.setAttribute('class', 'button-area');
-		b.setAttribute('style', 'position:relative;display:inline-block');
+		b.setAttribute('style', 'position:relative;display:inline-block;float:right;');
 		var a = document.createElement('a');
 		a.setAttribute('class','button primary');
+		a.setAttribute('style','width:100%;');
 		a.setAttribute('href', '#');
 		var t = document.createTextNode("Take Tour");
 		a.appendChild(t);
