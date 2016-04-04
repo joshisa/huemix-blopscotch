@@ -2492,7 +2492,8 @@
         top:    document.createElement('div'),
         left:   document.createElement('div'),
         right:  document.createElement('div'),
-        bottom: document.createElement('div')
+        bottom: document.createElement('div'),
+        rug: document.createElement('div')
       };
 
       this.element = el;
@@ -2575,6 +2576,16 @@
       el.style.left = '0px';
       el.style.width = targetBounds.left + utils.getScrollLeft() - margin + 'px';
       el.style.height = targetBounds.height + margin * 2 + 'px';
+      
+      // rug div to keep rounded white corners from looking bad.
+      el = this.element.rug;
+      el.id = "rug_underlay";
+      // Lets make sure this stays on the floor.
+      el.style.zindex = -1; 
+      el.style.top =  targetBounds.top + utils.getScrollTop() - margin + 'px';
+      el.style.left = targetBounds.left + utils.getScrollLeft() - margin + 'px';
+      el.style.width = targetBounds.width + 'px';
+      el.style.height = targetBounds.height + 'px';
     },
     render: function(step){
       // set options for current step:
