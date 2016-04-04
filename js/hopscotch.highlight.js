@@ -2572,7 +2572,7 @@
       el = this.element.left;
       el.id = "left_overlay";
       el.style.top = targetBounds.top + utils.getScrollTop() - margin + 'px';
-      el.style.left = utils.getScrollLeft() + margin + 'px';
+      el.style.left = utils.getScrollLeft() + margin + 20 + 'px';
       el.style.width = targetBounds.left + utils.getScrollLeft() - margin + 'px';
       el.style.height = targetBounds.height + margin * 2 + 'px';
     },
