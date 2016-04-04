@@ -2497,6 +2497,11 @@
 
       this.element = el;
 
+      //Merge highlight options with defaults.
+      opt = {
+        highlight:       defaultOpts.highlight,
+        highlightMargin: defaultOpts.highlightMargin
+      };
 
       initOpt = (typeof initOpt === undefinedStr ? {} : initOpt);
       utils.extend(opt, initOpt);
