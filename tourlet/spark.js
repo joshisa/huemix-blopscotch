@@ -6,7 +6,7 @@ if (spark.test(location.href)) {
 		var b = document.createElement('div');
 		b.setAttribute('id', 'startTourBtn');
 		b.setAttribute('class', 'button-area');
-		b.setAttribute('style', 'position:relative;float:right;');
+		b.setAttribute('style', 'position:relative;display:inline-block');
 		var a = document.createElement('a');
 		a.setAttribute('class','button primary');
 		a.setAttribute('href', '#');
