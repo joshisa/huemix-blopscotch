@@ -11,7 +11,9 @@ var tour = {
       title: 'Welcome to Hopscotch!',
       content: 'Hey there! This is an example Hopscotch tour. There will be plenty of time to read documentation and sample code, but let\'s just take some time to see how Hopscotch actually works.',
       placement: 'bottom',
-      arrowOffset: 60
+      arrowOffset: 60,
+      highlight: true,
+      highlightMargin: 0
     },
     {
       target: document.querySelectorAll('#general-use-desc code')[1],
@@ -61,9 +63,7 @@ var tour = {
     }
   ],
   showPrevButton: true,
-  scrollTopMargin: 100,
-  highlight:       true,
-  highlightMargin: 0
+  scrollTopMargin: 100
 },
 
 /* ========== */
