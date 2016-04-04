@@ -2546,6 +2546,7 @@
 
       // top div:
       el = this.element.top;
+      el.id = "top_overlay";
       el.style.top = '0px';
       el.style.left = '0px';
       el.style.width = window.screen.width + 'px';
@@ -2553,6 +2554,7 @@
 
       // right div:
       el = this.element.right;
+      el.id = "right_overlay";
       el.style.top = targetBounds.top + utils.getScrollTop() - margin + 'px';
       el.style.left = targetBounds.left + targetBounds.width + utils.getScrollLeft() + margin + 'px';
       el.style.width = window.screen.width  - (targetBounds.left + targetBounds.width + utils.getScrollLeft() + margin) +  'px';
@@ -2560,6 +2562,7 @@
 
       // bottom div:
       el = this.element.bottom;
+      el.id = "bottom_overlay";
       el.style.top = targetBounds.top + utils.getScrollTop() + targetBounds.height + margin + 'px';
       el.style.left = '0px';
       el.style.width = window.screen.width + 'px';
@@ -2567,8 +2570,9 @@
 
       // left div:
       el = this.element.left;
+      el.id = "left_overlay";
       el.style.top = targetBounds.top + utils.getScrollTop() - margin + 'px';
-      el.style.left = margin + 'px';
+      el.style.left = utils.getScrollLeft() + margin + 'px';
       el.style.width = targetBounds.left + utils.getScrollLeft() - margin + 'px';
       el.style.height = targetBounds.height + margin * 2 + 'px';
     },
