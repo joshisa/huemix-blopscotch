@@ -2567,8 +2567,8 @@
 
       // left div:
       el = this.element.left;
-      el.style.top = targetBounds.top + utils.getScrollTop() + - margin + 'px';
-      el.style.left = '0px';
+      el.style.top = targetBounds.top + utils.getScrollTop() - margin + 'px';
+      el.style.left = margin + 'px';
       el.style.width = targetBounds.left + utils.getScrollLeft() - margin + 'px';
       el.style.height = targetBounds.height + margin * 2 + 'px';
     },
