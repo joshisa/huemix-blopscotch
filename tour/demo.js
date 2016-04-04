@@ -100,7 +100,8 @@ init = function() {
         content: 'Start by taking an example tour to see Hopscotch in action!',
         yOffset: -25,
         arrowOffset: 20,
-        width: 240
+        width: 240,
+        highlight: true
       });
     }, 100);
   }
