@@ -92,7 +92,7 @@
     skipIfNoElement: true,
     isRtl:           false,
     cookieName:      'hopscotch.tour.state',
-    highlight:       false,
+    highlight:       true,
     highlightMargin: 0
   };
 
@@ -1126,7 +1126,7 @@
         bubblePadding:  defaultOpts.bubblePadding,
         arrowWidth:     defaultOpts.arrowWidth,
         highlight:       defaultOpts.highlight,
-        highlightMargin: defaultOpts.highlightMargin
+        highlightMargin: defaultOpts.highlightMargin,
         isRtl:          defaultOpts.isRtl,
         showNumber:     true,
         isTourBubble:   true
