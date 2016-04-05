@@ -109,9 +109,10 @@ init = function() {
       mgr = hopscotch.getCalloutManager(),
       state = hopscotch.getState();
 
-  if (state && state.indexOf('hello-hopscotch:') === 0) {
+  if (state && state.indexOf('hello-spark-on-bluemix') === 0) {
     // Already started the tour at some point!
-      hopscotch.startTour(tour);
+    alert(getCookie("toured"));
+    hopscotch.startTour(tour);
   }
   else {
     // Looking at the page for the first(?) time.
@@ -137,7 +138,5 @@ init = function() {
   });
 };
 
-    // Initialize tour if it's the user's first time
-    if (!getCookie("toured")) {
-        init();
-    }
+
+init();
