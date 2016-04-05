@@ -1,11 +1,6 @@
-function getCookie(key) {
-    var keyValue = document.cookie.match('(^|;) ?' + key + '=([^;]*)(;|$)');
-    return keyValue ? keyValue[2] : null;
-};
-
 var spark = /^https?:\/\/(console)\.ng\.bluemix\.net\/data\/analytics(.*?)/;
 // Initialize tour if it's the user's first time
-if (spark.test(location.href) && !getCookie("toured")) {
+if (spark.test(location.href)) {
 	console.log(prefix + "Loading tour button on Working with Notebooks and Spark Instances Dashboard");
 	// Let's attach a Take Tour button to the page
 	var newnotebookbutton = document.getElementsByClassName("button-area");
