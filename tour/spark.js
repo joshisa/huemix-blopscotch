@@ -89,8 +89,8 @@ init = function() {
         id: calloutId,
         target: startBtnId,
         placement: 'left',
-        title: 'Take an example tour',
-        content: 'Start by taking an example tour to see Hopscotch in action!',
+        title: 'Friend, interested in a tour?',
+        content: 'We shall not cease from exploration<br>And the end of all our exploring<br>Will be to arrive where we started<br>And know the place for the first time.<br>∞T.S. Eliot∞',
         yOffset: -25,
         arrowOffset: 20,
         width: 240
