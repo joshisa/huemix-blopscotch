@@ -9,6 +9,10 @@ function setCookie(key, value) {
     document.cookie = key + '=' + value + ';path=/' + ';expires=' + expires.toUTCString();
 };
 
+function deleteCookie(key) {
+  document.cookie = key +'=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+}
+
 function getCookie(key) {
     var keyValue = document.cookie.match('(^|;) ?' + key + '=([^;]*)(;|$)');
     return keyValue ? keyValue[2] : null;
@@ -111,11 +115,12 @@ init = function() {
 
   if (state && state.indexOf('hello-spark-on-bluemix') === 0) {
     // Already started the tour at some point!
-    alert(getCookie("toured"));
+    alert('resumed-' + getCookie("toured"));
     hopscotch.startTour(tour);
   }
   else {
     // Looking at the page for the first(?) time.
+    alert('new-huh-' + getCookie("toured"));
     setTimeout(function() {
       mgr.createCallout({
         id: calloutId,
@@ -133,6 +138,7 @@ init = function() {
   addClickListener(document.getElementById(startBtnId), function() {
     if (!hopscotch.isActive) {
       mgr.removeAllCallouts();
+      deleteCookie('toured');
       hopscotch.startTour(tour);
     }
   });
