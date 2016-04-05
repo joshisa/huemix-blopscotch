@@ -1,8 +1,19 @@
 /* globals hopscotch: false */
+/*
+ * Elements courtesy of https://github.com/gthomas3
+ * https://github.com/linkedin/hopscotch/issues/80#issuecomment-48330396
+*/
+function setCookie(key, value) {
+    var expires = new Date();
+    expires.setTime(expires.getTime() + (1 * 24 * 60 * 60 * 1000));
+    document.cookie = key + '=' + value + ';path=/' + ';expires=' + expires.toUTCString();
+};
 
-/* ============ */
-/* EXAMPLE TOUR */
-/* ============ */
+function getCookie(key) {
+    var keyValue = document.cookie.match('(^|;) ?' + key + '=([^;]*)(;|$)');
+    return keyValue ? keyValue[2] : null;
+};
+
 var tour = {
   id: 'hello-spark-on-bluemix',
   steps: [
@@ -71,7 +82,13 @@ var tour = {
     },
   ],
   showPrevButton: true,
-  scrollTopMargin: 100
+  scrollTopMargin: 100,
+  onEnd: function() {
+      setCookie("toured", "toured");
+  },
+  onClose: function() {
+      setCookie("toured", "toured");
+  }
 },
 
 /* ========== */
@@ -94,7 +111,10 @@ init = function() {
 
   if (state && state.indexOf('hello-hopscotch:') === 0) {
     // Already started the tour at some point!
-    hopscotch.startTour(tour);
+    // Initialize tour if it's the user's first time
+    if (!getCookie("toured")) {
+      hopscotch.startTour(tour);
+    }
   }
   else {
     // Looking at the page for the first(?) time.
@@ -115,7 +135,9 @@ init = function() {
   addClickListener(document.getElementById(startBtnId), function() {
     if (!hopscotch.isActive) {
       mgr.removeAllCallouts();
-      hopscotch.startTour(tour);
+      if (!getCookie("toured")) {
+        hopscotch.startTour(tour);
+      }
     }
   });
 };
