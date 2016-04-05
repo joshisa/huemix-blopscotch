@@ -18,7 +18,7 @@ if (jupyter.test(location.href)) {
 	a.appendChild(t);
 	b.appendChild(a);
 	
-	paletteHeader[0].insertBefore(b, paletteBackButton);
+	paletteHeader[0].insertBefore(b, paletteBackButton[0]);
 	console.log(prefix + "Tour Button injected ...");
 	
 	var t = document.createElement ('script');
