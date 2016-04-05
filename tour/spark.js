@@ -89,10 +89,10 @@ var tour = {
   scrollTopMargin: 100,
   onEnd: function() {
       setCookie("toured", "toured");
-  },
-  onClose: function() {
-     setCookie("toured", "toured");
   }
+  //onClose: function() {
+  //  setCookie("toured", "toured");
+  //}
 },
 
 /* ========== */
