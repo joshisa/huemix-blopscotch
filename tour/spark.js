@@ -21,7 +21,7 @@ var tour = {
       arrowOffset: 60
     },
     {
-      target: ['storage],
+      target: ['storage'],
       title: 'Object Storage',
       content: 'Jupyter (iPython) notebooks need data from somewhere.  Here\'s your goto spot! A tab that shows you OpenStack Object Storage instances',
       placement: 'bottom',
