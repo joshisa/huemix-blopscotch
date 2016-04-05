@@ -89,10 +89,10 @@ var tour = {
   scrollTopMargin: 100,
   onEnd: function() {
       setCookie("toured", "toured");
+  },
+  onClose: function() {
+    setCookie("toured", "toured");
   }
-  //onClose: function() {
-  //  setCookie("toured", "toured");
-  //}
 },
 
 /* ========== */
@@ -115,12 +115,10 @@ init = function() {
 
   if (state && state.indexOf('hello-spark-on-bluemix') === 0) {
     // Already started the tour at some point!
-    alert('resumed-' + getCookie("toured"));
     hopscotch.startTour(tour);
   }
   else {
     // Looking at the page for the first(?) time.
-    alert('new-huh-' + getCookie("toured"));
     if (!getCookie("toured")) {
         setTimeout(function() {
           mgr.createCallout({
