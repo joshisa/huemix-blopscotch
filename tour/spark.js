@@ -8,8 +8,22 @@ var tour = {
   steps: [
     {
       target: 'main-infobar',
-      title: 'Welcome to Spark-as-a-Service on IBM Bluemix!',
-      content: 'Hey there! <a href="https://ibm.com/jstart"><img border=0 src="https://raw.githubusercontent.com/joshisa/huemix-blopscotch/master/img/jstart.png" style="height:20px;width:20px;vertical-align:middle;">IBM jStart</a> is honored to be a partner in your journey with Apache Spark, Jupyter Notebooks and OpenStack Object Storage.   There will be plenty of time to read documentation and sample code, but let\'s quickly see what fun levers are here to pull!',
+      title: 'Welcome to the IBM Bluemix Spark-as-a-Service tl;dr',
+      content: 'Hey there! <a href="https://ibm.com/jstart"><img border=0 src="https://raw.githubusercontent.com/joshisa/huemix-blopscotch/master/img/jstart.png" style="height:20px;width:20px;vertical-align:middle;">&nbsp;IBM jStart</a> is honored to be a partner in your journey with Apache Spark, Jupyter Notebooks and OpenStack Object Storage. There\'s plenty of time to read doc and sample code, but join us first on this quick feature fly-by!',
+      placement: 'bottom',
+      arrowOffset: 60
+    },
+    {
+      target: ['instances', 'all-instances'],
+      title: 'Apache Spark Instances',
+      content: 'A multi-tenant Spark cluster means up to 10 separate instances just for you.  As you create \'em, find them here',
+      placement: 'bottom',
+      arrowOffset: 60
+    },
+    {
+      target: ['storage],
+      title: 'Object Storage',
+      content: 'Jupyter (iPython) notebooks need data from somewhere.  Here\'s your goto spot! A tab that shows you OpenStack Object Storage instances',
       placement: 'bottom',
       arrowOffset: 60
     },
@@ -37,7 +51,7 @@ var tour = {
     {
       target: document.querySelectorAll('.data-page-icon.analytics')[0],
       title: 'Analytics',
-      content: 'Homebase for Spark using notebooks',
+      content: 'Almost done, this is homebase for Spark using notebooks',
       placement: 'right',
       arrowOffset: 30
     },
@@ -51,7 +65,7 @@ var tour = {
     {
       target: document.querySelectorAll('.notebooks-desc')[0],
       title: 'Precipitation Analysis',
-      content: 'Rain, rain go away - check out the Precipitation Analysis notebook',
+      content: 'Rain, rain go away - check out the Precipitation Analysis notebook for a simple starter',
       placement: 'top',
       arrowOffset: 30
     },
