@@ -91,7 +91,7 @@ var tour = {
       setCookie("toured", "toured");
   },
   onClose: function() {
-      setCookie("toured", "toured");
+     setCookie("toured", "toured");
   }
 },
 
@@ -121,18 +121,20 @@ init = function() {
   else {
     // Looking at the page for the first(?) time.
     alert('new-huh-' + getCookie("toured"));
-    setTimeout(function() {
-      mgr.createCallout({
-        id: calloutId,
-        target: startBtnId,
-        placement: 'left',
-        title: 'Friend, interested in a tour?',
-        content: 'We shall not cease from exploration<br>And the end of all our exploring<br>Will be to arrive where we started<br>And know the place for the first time.<br>∞T.S. Eliot∞',
-        yOffset: -25,
-        arrowOffset: 20,
-        width: 240
-      });
-    }, 100);
+    if (!getCookie("toured")) {
+        setTimeout(function() {
+          mgr.createCallout({
+            id: calloutId,
+            target: startBtnId,
+            placement: 'left',
+            title: 'Friend, interested in a tour?',
+            content: 'We shall not cease from exploration<br>And the end of all our exploring<br>Will be to arrive where we started<br>And know the place for the first time.<br>∞T.S. Eliot∞',
+            yOffset: -25,
+            arrowOffset: 20,
+            width: 240
+          });
+        }, 100);
+    }
   }
 
   addClickListener(document.getElementById(startBtnId), function() {
