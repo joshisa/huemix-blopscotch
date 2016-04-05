@@ -1025,6 +1025,7 @@
         el.parentNode.removeChild(el);
       }
       utils.removeEvtListener(el, 'click', this.clickCb);
+      this.highlight.hide();
     },
 
     _handleBubbleClick: function(evt){
