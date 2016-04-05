@@ -9,50 +9,50 @@ var tour = {
     {
       target: 'main-infobar',
       title: 'Welcome to Spark-as-a-Service on IBM Bluemix!',
-      content: 'Hey there! IBM is honored to be a partner in your journey with Apache Spark, Jupyter Notebooks and OpenStack Object Storage.   There will be plenty of time to read documentation and sample code, but let\'s just take some time to see what fun levers are here for you to pull!',
+      content: 'Hey there! <a href="https://ibm.com/jstart"><img border=0 src="https://raw.githubusercontent.com/joshisa/huemix-blopscotch/master/img/jstart.png" style="height:20px;width:20px;vertical-align:middle;">IBM jStart</a> is honored to be a partner in your journey with Apache Spark, Jupyter Notebooks and OpenStack Object Storage.   There will be plenty of time to read documentation and sample code, but let\'s quickly see what fun levers are here to pull!',
       placement: 'bottom',
       arrowOffset: 60
     },
     {
       target: ['notebooks', 'all-notebooks'],
       title: 'Jupyter Notebooks',
-      content: 'Here\'s a tab to show you all of your Jupyter notebooks',
+      content: 'Did you notice this tab to show you all of your Jupyter (iPython) notebooks?',
       placement: 'bottom',
       arrowOffset: 60
     },
     {
       target: document.querySelectorAll('.data-page-icon.services')[0],
       title: 'Services',
-      content: 'Explore getting data into your services',
+      content: 'Look here! Here\'s a view to explore getting data into your services',
       placement: 'right',
       arrowOffset: 30
     },
     {
       target: document.querySelectorAll('.data-page-icon.data')[0],
       title: 'Data',
-      content: 'View and Edit connections to an existing data source',
+      content: 'Got data sources? View and Edit connections for them here',
       placement: 'right',
       arrowOffset: 30
     },
     {
       target: document.querySelectorAll('.data-page-icon.analytics')[0],
       title: 'Analytics',
-      content: 'Accelerate your analytics with Spark using notebooks in Python or Scala',
+      content: 'Homebase for Spark using notebooks',
       placement: 'right',
       arrowOffset: 30
     },
     {
       target: document.querySelectorAll('.data-page-icon.exchange')[0],
       title: 'Exchange',
-      content: 'Unlock the power of your data by exploring and discovering 200+ Datasets via the Analytics Exchange.',
+      content: 'Behind Door #3, check out 200+ Datasets via the Analytics Exchange.',
       placement: 'right',
       arrowOffset: 30
     },
     {
       target: document.querySelectorAll('.notebooks-desc')[0],
       title: 'Precipitation Analysis',
-      content: 'If you\'re looking for a simple example, checkout this Precipitation Analysis notebook',
-      placement: 'right',
+      content: 'Rain, rain go away - check out the Precipitation Analysis notebook',
+      placement: 'top',
       arrowOffset: 30
     },
   ],
