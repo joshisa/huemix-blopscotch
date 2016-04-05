@@ -10,7 +10,7 @@ if (spark.test(location.href)) {
 		a.setAttribute('class','button primary');
 		a.setAttribute('style','width:100%;');
 		a.setAttribute('href', '#');
-		var t = document.createTextNode("Take Tour");
+		var t = document.createTextNode("▶ Tour");
 		a.appendChild(t);
 		b.appendChild(a);
 		newnotebookbutton[0].appendChild(b);
