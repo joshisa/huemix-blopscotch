@@ -3,20 +3,22 @@ var jupyter = /^https?:\/\/(console)\.ng\.bluemix\.net\/data\/notebooks(.*?)/;
 if (jupyter.test(location.href)) {
 	console.log(prefix + "Loading tour button on the Jupyter notebook");
 	// Let's attach a Take Tour button to the page
-	var palette = document.getElementsByClassName("paletteCardHeader");
-	var b = document.createElement('span');
+	var paletteHeader = document.getElementsByClassName("paletteCardHeader");
+	var paletteBackButton = document.getElementsByClassName("paletteBackButtonWrapper");
+	var b = document.createElement('div');
 	b.setAttribute('id', 'startTourBtn');
-	b.setAttribute('class', 'paletteTextBold');
+	b.setAttribute('style', 'position:relative;left:-20%;');
 	
 	var a = document.createElement('a');
-	a.setAttribute('class','button primary');
-	a.setAttribute('style','width:100%;');
+	a.setAttribute('class','paletteColumnButton');
+	a.setAttribute('style','text-decoration:none;color:orange;font-weight:bold;');
 	a.setAttribute('href', '#');
 	
 	var t = document.createTextNode("▶ Tour");
 	a.appendChild(t);
 	b.appendChild(a);
-	palette[0].appendChild(b);
+	
+	paletteHeader[0].insertBefore(b, paletteBackButton);
 	console.log(prefix + "Tour Button injected ...");
 	
 	var t = document.createElement ('script');
