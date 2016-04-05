@@ -8,7 +8,7 @@ if (jstart.test(location.href)) {
 		b.setAttribute('class', 'ibm-btn-pri');
 		b.setAttribute('style', 'position:inherit;float:left;');
 		b.setAttribute('href', '#');
-		var t = document.createTextNode("Take Tour");
+		var t = document.createTextNode("▶ Tour");
 		b.appendChild(t);
 		mainsection.appendChild(b);
 		console.log(prefix + "Tour Button injected ...");
