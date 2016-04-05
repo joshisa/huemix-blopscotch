@@ -111,10 +111,7 @@ init = function() {
 
   if (state && state.indexOf('hello-hopscotch:') === 0) {
     // Already started the tour at some point!
-    // Initialize tour if it's the user's first time
-    if (!getCookie("toured")) {
       hopscotch.startTour(tour);
-    }
   }
   else {
     // Looking at the page for the first(?) time.
@@ -135,11 +132,12 @@ init = function() {
   addClickListener(document.getElementById(startBtnId), function() {
     if (!hopscotch.isActive) {
       mgr.removeAllCallouts();
-      if (!getCookie("toured")) {
-        hopscotch.startTour(tour);
-      }
+      hopscotch.startTour(tour);
     }
   });
 };
 
-init();
+    // Initialize tour if it's the user's first time
+    if (!getCookie("toured")) {
+        init();
+    }
