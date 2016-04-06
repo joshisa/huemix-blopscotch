@@ -22,10 +22,10 @@ var tour = {
   id: 'hello-jupyter-on-bluemix',
   steps: [
     {
-      target: 'kernel_indicator',
+      target: ['kernel_indicator'],
       title: 'Welcome to our Jupyter Notebook tl;dr',
       content: 'Hey there! <a href="https://ibm.com/jstart"><img border=0 src="https://raw.githubusercontent.com/joshisa/huemix-blopscotch/master/img/jstart.png" style="height:20px;width:20px;vertical-align:middle;">&nbsp;IBM jStart</a> is honored to be a partner in your journey with Apache Spark, Jupyter Notebooks and OpenStack Object Storage. There\'s plenty of time to read doc and sample code, but join us first on this quick feature fly-by!',
-      placement: 'left',
+      placement: 'bottom',
       arrowOffset: 0
     }
   ],
@@ -72,7 +72,7 @@ init = function() {
             placement: 'left',
             title: 'Friend, interested in a tour?',
             content: 'We shall not cease from exploration<br>And the end of all our exploring<br>Will be to arrive where we started<br>And know the place for the first time.<br>∞T.S. Eliot∞',
-            yOffset: -25,
+            yOffset: -20,
             arrowOffset: 20,
             width: 240
           });
