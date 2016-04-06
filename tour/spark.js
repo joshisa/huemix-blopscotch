@@ -33,21 +33,21 @@ var tour = {
       title: 'Apache Spark Instances',
       content: 'A multi-tenant Spark cluster means up to 10 separate instances just for you.  As you create \'em, find them here',
       placement: 'bottom',
-      arrowOffset: 60
+      arrowOffset: 0
     },
     {
       target: ['storage'],
       title: 'Object Storage',
       content: 'Jupyter (iPython) notebooks need data from somewhere.  Here\'s your goto spot! A tab that shows you OpenStack Object Storage instances',
       placement: 'bottom',
-      arrowOffset: 60
+      arrowOffset: 0
     },
     {
       target: ['notebooks', 'all-notebooks'],
       title: 'Jupyter Notebooks',
       content: 'Did you notice this tab to show you all of your Jupyter (iPython) notebooks?',
       placement: 'bottom',
-      arrowOffset: 60
+      arrowOffset: 0
     },
     {
       target: document.querySelectorAll('.data-page-icon.services')[0],
