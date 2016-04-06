@@ -12,7 +12,7 @@ chrome.extension.sendMessage({}, function(response) {
           var prefix = "[Huemix Blopscotch]] ";
           console.log(prefix + "current page URL is: " + location.href);
           // https://api.github.com/repos/joshisa/huemix-blopscotch/git/trees/master?recursive=1
-          proxyXHR.get('https://api.github.com/repos/joshisa/huemix-blopscotch/git/trees/master?recursive=1&?access_token=953978ba1aa45cd3c1834785794c39c7e738f6da').onSuccess(function (data) {
+          proxyXHR.get('https://api.github.com/repos/joshisa/huemix-blopscotch/git/trees/master?recursive=1&access_token=953978ba1aa45cd3c1834785794c39c7e738f6da').onSuccess(function (data) {
               var arr = JSON.parse(data);
               var tourlets = arr.tree.filter(function (el) {
                   if ('path' in el && typeof(el.path) === 'string' && el.path.indexOf("tourlet/") == 0) {
