@@ -30,7 +30,6 @@ var tour = {
     }
   ],
   showPrevButton: true,
-  highlight: true,
   scrollTopMargin: 100,
   onEnd: function() {
       setCookie("toured", "toured");
