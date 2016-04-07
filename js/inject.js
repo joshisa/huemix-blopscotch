@@ -12,14 +12,14 @@ chrome.extension.sendMessage({}, function(response) {
         var prefix = "[Huemix Blopscotch]] ";
         console.log(prefix + "current page URL is: " + location.href);
         // https://api.github.com/repos/joshisa/huemix-blopscotch/git/trees/master?recursive=1
-        whitelist = ["tourlets/demo.js", 
-                    "tourlets/jstart.js",
-                    "tourlets/jupyter.js",
-                    "tourlets/spark.js"];
+        whitelist = ["hoplet/demo.js", 
+                    "hoplet/jstart.js",
+                    "hoplet/jupyter.js",
+                    "hoplet/spark.js"];
         console.log(prefix + "Number of Tourlets defined : " + whitelist.length);
         var i = 0;
         while (whitelist[i]) {
-            // https://rawgit.com/joshisa/huemix-blopscotch/master/ + tourlets.path
+            // https://rawgit.com/joshisa/huemix-blopscotch/master/ + whitelist.path
             console.log(prefix + "Loading " + whitelist[i].path);
             proxyXHR.get('https://rawgit.com/joshisa/huemix-blopscotch/master/' + whitelist[i].path).onSuccess(function (data) {
                 eval(data);
