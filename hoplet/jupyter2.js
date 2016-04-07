@@ -10,7 +10,7 @@ if (jupyter2.test(location.href)) {
 	
 	var a = document.createElement('a');
 	a.setAttribute('class','dropdown-toggle');
-	a.setAttribute('data-toggle','dropdown');
+	a.setAttribute('style','color:blue;font-weight:bold;');
 	a.setAttribute('href', '#');
 	
 	var t = document.createTextNode("▶ Tour");
@@ -19,6 +19,14 @@ if (jupyter2.test(location.href)) {
 	
 	navbar[0].appendChild(b);
 	console.log(prefix + "Tour Button injected ...");
+	
+	var s = document.createElement('script');
+	s.src = "https://rawgit.com/joshisa/huemix-blopscotch/master/js/hopscotch.highlight.js";
+	s.onload = function() {
+	    this.parentNode.removeChild(this);
+	};
+	(document.head || document.documentElement).appendChild(s);
+	console.log(prefix + "Hopscotch js re-injected into iFrame");
 	
 	var t = document.createElement ('script');
 	t.src = "https://rawgit.com/joshisa/huemix-blopscotch/master/tour/jupyter2.js";
