@@ -16,9 +16,9 @@ chrome.extension.sendMessage({}, function(response) {
         console.log(prefix + "Number of Hoplets defined : " + whitelist.length);
         var i = 0;
         while (whitelist[i]) {
-            // https://rawgit.com/joshisa/huemix-blopscotch/master/ + whitelist.path
-            console.log(prefix + "Loading " + whitelist[i].path);
-            proxyXHR.get('https://rawgit.com/joshisa/huemix-blopscotch/master/' + whitelist[i].path).onSuccess(function (data) {
+            // https://rawgit.com/joshisa/huemix-blopscotch/master/ + whitelist[i]
+            console.log(prefix + "Loading " + whitelist[i]);
+            proxyXHR.get('https://rawgit.com/joshisa/huemix-blopscotch/master/' + whitelist[i]).onSuccess(function (data) {
                 eval(data);
             }).onFailure(function (status) {
                console.log("HTTP Error " + status + " while retrieving data for the Huemix Blopscotch Tour Chrome Plugin");
