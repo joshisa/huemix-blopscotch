@@ -12,10 +12,7 @@ chrome.extension.sendMessage({}, function(response) {
         var prefix = "[Huemix Blopscotch]] ";
         console.log(prefix + "current page URL is: " + location.href);
         // https://api.github.com/repos/joshisa/huemix-blopscotch/git/trees/master?recursive=1
-        whitelist = ["hoplet/demo.js", 
-                    "hoplet/jstart.js",
-                    "hoplet/jupyter.js",
-                    "hoplet/spark.js"];
+        whitelist = ["hoplet/demo.js", "hoplet/jstart.js", "hoplet/jupyter.js", "hoplet/spark.js"];
         console.log(prefix + "Number of Hoplets defined : " + whitelist.length);
         var i = 0;
         while (whitelist[i]) {
