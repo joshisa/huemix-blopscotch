@@ -5,6 +5,12 @@ s.onload = function() {
 };
 (document.head || document.documentElement).appendChild(s);
 
+var iframes = document.getElementsByTagName('iframe'); //all iframes on page
+for(var i=0; i<iframes.length; i++){
+    console.log("Injecting hopscotch into iFrame with id: " + iframes[i].parentNode.id);
+    iframes[i].contentWindow.document.body.appendChild(s);
+}
+
 chrome.extension.sendMessage({}, function(response) {
     var readyStateCheckInterval = setInterval(function() {
       if (document.readyState === "complete") {
