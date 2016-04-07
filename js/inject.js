@@ -3,6 +3,13 @@ s.src = "https://rawgit.com/joshisa/huemix-blopscotch/master/js/hopscotch.highli
 s.onload = function() {
     this.parentNode.removeChild(this);
 };
+define(["https://rawgit.com/joshisa/huemix-blopscotch/master/js/hopscotch.highlight.js"], function(hopweb) {
+    //The D3 library is also loaded over the web and ready to use
+    console.log(hopweb);
+    console.log("boo");
+});
+
+/*
 (document.head || document.documentElement).appendChild(s);
 
 var iframes = document.getElementsByTagName('iframe'); //all iframes on page
@@ -10,6 +17,7 @@ for(var i=0; i<iframes.length; i++){
     console.log("Injecting hopscotch into iFrame with id: " + iframes[i].parentNode.id);
     iframes[i].contentWindow.document.body.appendChild(s);
 }
+*/
 
 chrome.extension.sendMessage({}, function(response) {
     var readyStateCheckInterval = setInterval(function() {
