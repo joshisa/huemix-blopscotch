@@ -16,7 +16,7 @@ chrome.extension.sendMessage({}, function(response) {
                     "hoplet/jstart.js",
                     "hoplet/jupyter.js",
                     "hoplet/spark.js"];
-        console.log(prefix + "Number of Tourlets defined : " + whitelist.length);
+        console.log(prefix + "Number of Hoplets defined : " + whitelist.length);
         var i = 0;
         while (whitelist[i]) {
             // https://rawgit.com/joshisa/huemix-blopscotch/master/ + whitelist.path
