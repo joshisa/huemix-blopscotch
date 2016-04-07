@@ -16,6 +16,7 @@ chrome.extension.sendMessage({}, function(response) {
         whitelist = ["hoplet/demo.js", 
                     "hoplet/jstart.js",
                     "hoplet/jupyter.js",
+                    "hoplet/jupyter2.js",
                     "hoplet/spark.js"];
                     
         console.log(prefix + "Number of Hoplets defined : " + whitelist.length);
