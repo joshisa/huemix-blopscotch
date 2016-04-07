@@ -22,14 +22,7 @@ var tour = {
   id: 'hello-jupyter-on-bluemix',
   steps: [
     {
-      target: document.querySelectorAll('.data-page-icon.analytics')[0],
-      title: 'Analytics',
-      content: 'Almost done, this is homebase for Spark using notebooks',
-      placement: 'right',
-      arrowOffset: 30
-    },
-    {
-      target: 'iframe#guest',
+      target: 'iframe#guest#menubar',
       title: 'Welcome to our Jupyter Notebook tl;dr',
       content: 'Hey there! <a href="https://ibm.com/jstart"><img border=0 src="https://raw.githubusercontent.com/joshisa/huemix-blopscotch/master/img/jstart.png" style="height:20px;width:20px;vertical-align:middle;">&nbsp;IBM jStart</a> is honored to be a partner in your journey with Apache Spark, Jupyter Notebooks and OpenStack Object Storage. There\'s plenty of time to read doc and sample code, but join us first on this quick feature fly-by!',
       placement: 'bottom',
