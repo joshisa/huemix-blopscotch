@@ -22,6 +22,7 @@ chrome.extension.sendMessage({}, function(response) {
         console.log(prefix + "current page URL is: " + location.href);
         // https://api.github.com/repos/joshisa/huemix-blopscotch/git/trees/master?recursive=1
         // Array of registered hoplets
+        /*
         whitelist = ["hoplet/demo.js", 
                     "hoplet/jstart.js",
                     "hoplet/jupyter2.js",
@@ -39,6 +40,7 @@ chrome.extension.sendMessage({}, function(response) {
             });
             i++;
         }
+        */
         console.log(prefix + "Hopscotch Dependencies successfully injected");
       }
     }, 10);
