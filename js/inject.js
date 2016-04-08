@@ -5,15 +5,6 @@ s.onload = function() {
 };
 
 (document.head || document.documentElement).appendChild(s);
-/*
-
-var iframes = document.getElementsByTagName('iframe'); //all iframes on page
-for(var i=0; i<iframes.length; i++){
-    console.log("Injecting hopscotch into iFrame with id: " + iframes[i].parentNode.id);
-    iframes[i].contentWindow.document.body.appendChild(s);
-}
-*/
-
 chrome.extension.sendMessage({}, function(response) {
     var readyStateCheckInterval = setInterval(function() {
       if (document.readyState === "complete") {
@@ -22,7 +13,6 @@ chrome.extension.sendMessage({}, function(response) {
         console.log(prefix + "current page URL is: " + location.href);
         // https://api.github.com/repos/joshisa/huemix-blopscotch/git/trees/master?recursive=1
         // Array of registered hoplets
-        /*
         whitelist = ["hoplet/demo.js", 
                     "hoplet/jstart.js",
                     "hoplet/jupyter2.js",
@@ -40,7 +30,6 @@ chrome.extension.sendMessage({}, function(response) {
             });
             i++;
         }
-        */
         console.log(prefix + "Hopscotch Dependencies successfully injected");
       }
     }, 10);
