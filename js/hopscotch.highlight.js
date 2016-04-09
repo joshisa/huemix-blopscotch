@@ -25,7 +25,7 @@
 
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define([], factory);
+    define('hopscotch', [], factory);
   } else if (typeof exports === 'object') {
     // Node/CommonJS
     module.exports = factory();
