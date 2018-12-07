@@ -15,6 +15,6 @@ if (jstart.test(location.href)) {
 		
 		// Load the jstart website tour
 		var t = document.createElement ('script');
-		t.src = "https://rawgit.com/joshisa/huemix-blopscotch/master/tour/jstart.js";
+		t.src = "https://cdn.jsdelivr.net/gh/joshisa/huemix-blopscotch/tour/jstart.js";
 		document.body.appendChild (t);
 }
