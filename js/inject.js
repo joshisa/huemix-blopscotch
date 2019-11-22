@@ -18,10 +18,7 @@ function ping() {
             // https://api.github.com/repos/joshisa/huemix-blopscotch/git/trees/master?recursive=1
             // Array of registered hoplets
             whitelist = ["hoplet/demo.js",
-                        "hoplet/jstart.js",
-                        "hoplet/jupyter2.js",
-                        "hoplet/spark.js"];
-                        
+                        "hoplet/cp4mcm.js"];
             console.log(prefix + "Number of Hoplets defined : " + whitelist.length);
             var i = 0;
             while (whitelist[i]) {
