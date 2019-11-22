@@ -9,9 +9,7 @@ s.src = "https://raw.githack.com/joshisa/huemix-blopscotch/master/js/hopscotch.h
 function ping() {
   chrome.extension.sendMessage({}, function(response) {
       if (chrome.runtime.lastError) {
-        console.warn("foo::" + chrome.runtime.lastError.message);
-        setTimeout(ping, 1000);
-      } else {
+        //console.log("foo::" + chrome.runtime.lastError.message);
         var readyStateCheckInterval = setInterval(function() {
           if (document.readyState === "complete") {
             clearInterval(readyStateCheckInterval);
