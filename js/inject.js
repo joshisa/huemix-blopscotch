@@ -1,5 +1,5 @@
 var s = document.createElement('script');
-s.src = "https://rawgit.com/joshisa/huemix-blopscotch/master/js/hopscotch.highlight.js";
+s.src = "https://raw.githack.com/joshisa/huemix-blopscotch/master/js/hopscotch.highlight.js";
 //s.onload = function() {
 //    this.parentNode.removeChild(this);
 //};
@@ -24,7 +24,7 @@ chrome.extension.sendMessage({}, function(response) {
         while (whitelist[i]) {
             // https://rawgit.com/joshisa/huemix-blopscotch/master/ + whitelist[i]
             console.log(prefix + "Loading " + whitelist[i]);
-            proxyXHR.get('https://rawgit.com/joshisa/huemix-blopscotch/master/' + whitelist[i]).onSuccess(function (data) {
+            proxyXHR.get('https://raw.githack.com/joshisa/huemix-blopscotch/master/' + whitelist[i]).onSuccess(function (data) {
                 eval(data);
             });
             i++;
