@@ -18,6 +18,6 @@ if (spark.test(location.href)) {
 	console.log(prefix + "Tour Button injected ...");
 	
 	var t = document.createElement ('script');
-	t.src = "https://rawgit.com/joshisa/huemix-blopscotch/master/tour/spark.js";
+	t.src = "https://raw.githack.com/joshisa/huemix-blopscotch/master/tour/spark.js";
 	document.body.appendChild (t);
 }

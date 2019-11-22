@@ -22,6 +22,6 @@ if (jupyter.test(location.href)) {
 	console.log(prefix + "Tour Button injected ...");
 	
 	var t = document.createElement ('script');
-	t.src = "https://rawgit.com/joshisa/huemix-blopscotch/master/tour/jupyter.js";
+	t.src = "https://raw.githack.com/joshisa/huemix-blopscotch/master/tour/jupyter.js";
 	document.body.appendChild (t);
 }

@@ -411,7 +411,7 @@ div.hopscotch-bubble .hopscotch-bubble-close {
   appearance: none;
   border: 0;
   color: #000;
-  background: transparent url("https://cdn.rawgit.com/joshisa/huemix-blopscotch/master/img/sprite-green.png") -192px -92px no-repeat;
+  background: transparent url("https://rawcdn.githack.com/joshisa/huemix-blopscotch/1b4d2c9fc8c9ead2e588ab4437e35b240934e908/img/sprite-green.png") -192px -92px no-repeat;
   display: block;
   padding: 8px;
   position: absolute;
