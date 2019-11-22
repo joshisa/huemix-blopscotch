@@ -18,12 +18,6 @@ function getCookie(key) {
     return keyValue ? keyValue[2] : null;
 };
 
-hopscotch.registerHelper('OpenSideMenu', function() {
-  console.log("registerHelper invoked ...");
-  alert("We are gonna click the hamburger");
-  $('.hamburger-box').trigger("click");
-});
-
 var tour = {
   id: 'hello-cloudpak-for-multicloud-management',
   steps: [
@@ -103,6 +97,12 @@ init = function() {
         }, 100);
     }
   }
+
+  hopscotch.registerHelper('OpenSideMenu', function() {
+    console.log("registerHelper invoked ...");
+    alert("We are gonna click the hamburger");
+    $('.hamburger-box').trigger("click");
+  });
 
   addClickListener(document.getElementById(startBtnId), function() {
     if (!hopscotch.isActive) {
