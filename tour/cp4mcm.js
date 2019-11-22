@@ -7,7 +7,7 @@ function setCookie(key, value) {
     var expires = new Date();
     expires.setTime(expires.getTime() + (1 * 24 * 60 * 60 * 1000));
     document.cookie = key + '=' + value + ';path=/' + ';expires=' + expires.toUTCString();
-};
+}
 
 function deleteCookie(key) {
     document.cookie = key + '=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
@@ -16,7 +16,7 @@ function deleteCookie(key) {
 function getCookie(key) {
     var keyValue = document.cookie.match('(^|;) ?' + key + '=([^;]*)(;|$)');
     return keyValue ? keyValue[2] : null;
-};
+}
 
 var tour = {
     id: 'hello-cloudpak-for-multicloud-management',
@@ -50,9 +50,9 @@ var tour = {
     onEnd: function() {
         setCookie("toured", "toured");
     }
-    onClose: function() {
-        setCookie("toured", "toured");
-    }
+    //onClose: function() {
+    //    setCookie("toured", "toured");
+    //}
 };
 
 /* ========== */
