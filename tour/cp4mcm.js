@@ -18,6 +18,10 @@ function getCookie(key) {
     return keyValue ? keyValue[2] : null;
 };
 
+hopscotch.registerHelper('OpenSideMenu', function() {
+    document.querySelectorAll('div div button span[class="hamburger-box"]')[0].click();
+});
+
 var tour = {
   id: 'hello-cloudpak-for-multicloud-management',
   steps: [
@@ -68,10 +72,6 @@ init = function() {
       calloutId = 'startTourCallout',
       mgr = hopscotch.getCalloutManager(),
       state = hopscotch.getState();
-
-  hopscotch.registerHelper('OpenSideMenu', function() {
-    document.querySelectorAll(' div div button span[class="hamburger-box"]')[0].click();
-  });
 
   if (state && state.indexOf('hello-cloudpak-for-multicloud-management') === 0) {
     // Already started the tour at some point!
