@@ -19,7 +19,9 @@ function getCookie(key) {
 };
 
 hopscotch.registerHelper('OpenSideMenu', function() {
-  $('.hamburger-box').click();
+  console.log("registerHelper invoked ...");
+  alert("We are gonna click the hamburger");
+  $('.hamburger-box').trigger("click");
 });
 
 var tour = {
@@ -30,8 +32,7 @@ var tour = {
       title: 'Hamburger Menu',
       content: 'Hey there! IBM is honored to be a partner in your journey with CP4MCM. There\'s plenty of time to read doc and sample code, but join us first on this quick feature fly-by!  This sidebar menu is your main navigation.',
       placement: 'right',
-      arrowOffset: 60,
-      multipage: false,
+      arrowOffset: 0,
       onNext: ["OpenSideMenu"]
     },
     {
