@@ -10,7 +10,7 @@ chrome.extension.sendMessage({}, function(response) {
     var readyStateCheckInterval = setInterval(function() {
       if (document.readyState === "complete") {
         clearInterval(readyStateCheckInterval);
-        var prefix = "[Huemix Blopscotch]] ";
+        var prefix = "[Huemix Blopscotch on githack]] ";
         console.log(prefix + "current page URL is: " + location.href);
         // https://api.github.com/repos/joshisa/huemix-blopscotch/git/trees/master?recursive=1
         // Array of registered hoplets
