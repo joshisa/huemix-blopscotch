@@ -22,14 +22,14 @@ var tour = {
   id: 'hello-cloudpak-for-multicloud-management',
   steps: [
     {
-      target: document.querySelectorAll('.overview-header-title')[0],
+      target: document.querySelectorAll('#overview')[0],
       title: 'Overview',
       content: 'Hey there! IBM is honored to be a partner in your journey with CP4MCM. There\'s plenty of time to read doc and sample code, but join us first on this quick feature fly-by!  This is the overview.  A great place to understand things at a very high level across all managed systems.',
       placement: 'bottom',
       arrowOffset: 60,
       multipage: true,
       onNext: function() {
-        window.location = "/multicloud/overview"
+        window.location = "/multicloud/topology"
       }
     },
     {
@@ -42,6 +42,7 @@ var tour = {
   ],
   showPrevButton: true,
   scrollTopMargin: 100,
+  onStart: ["OpenSideMenu"],
   onEnd: function() {
       setCookie("toured", "toured");
   }
@@ -67,6 +68,10 @@ init = function() {
       calloutId = 'startTourCallout',
       mgr = hopscotch.getCalloutManager(),
       state = hopscotch.getState();
+
+  hopscotch.registerHelper('OpenSideMenu', function() {
+    document.querySelectorAll(' div div button span[class="hamburger-box"]')[0].click();
+  });
 
   if (state && state.indexOf('hello-cloudpak-for-multicloud-management') === 0) {
     // Already started the tour at some point!
