@@ -29,7 +29,7 @@ var tour = {
             onNext: ["openSideMenu"]
         },
         {
-            target: document.querySelectorAll('#overview')[0],
+            target: document.querySelectorAll('#create-resource')[0],
             title: 'Overview',
             content: 'Hey there! IBM is honored to be a partner in your journey with CP4MCM. There\'s plenty of time to read doc and sample code, but join us first on this quick feature fly-by!  This is the overview.  A great place to understand things at a very high level across all managed systems.',
             placement: 'bottom',
@@ -76,6 +76,13 @@ var init = function() {
         console.log("registerHelper invoked ...");
         alert("We are gonna click the hamburger");
         $('.hamburger-box').trigger("click");
+        var checkExist = setInterval(function() {
+            $element = $('#overview');
+            if ($element.is(':visible')) {
+              clearInterval(checkExist);
+              window.hopscotch.startTour(window.hopscotch.getCurrTour(), window.hopscotch.getCurrStepNum());
+            }
+        }, 100);
     });
 
     if (state && state.indexOf('hello-cloudpak-for-multicloud-management') === 0) {
