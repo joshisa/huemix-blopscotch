@@ -75,7 +75,7 @@ var init = function() {
     hopscotch.registerHelper("openSideMenu", function() {
         console.log("registerHelper invoked ...");
         alert("We are gonna click the hamburger");
-        $('.hamburger-box').trigger("click");
+        document.querySelectorAll('.hamburger-box')[0].click();
         /*
         var checkExist = setInterval(function() {
             $element = $('#overview');
@@ -85,10 +85,7 @@ var init = function() {
             }
         }, 100);
         */
-
         alert("Foo");
-        $('.hamburger-box').click();
-        alert("Bar");
     });
 
     if (state && state.indexOf('hello-cloudpak-for-multicloud-management') === 0) {
