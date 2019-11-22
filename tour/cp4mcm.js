@@ -76,6 +76,7 @@ var init = function() {
         console.log("registerHelper invoked ...");
         alert("We are gonna click the hamburger");
         $('.hamburger-box').trigger("click");
+        /*
         var checkExist = setInterval(function() {
             $element = $('#overview');
             if ($element.is(':visible')) {
@@ -83,6 +84,11 @@ var init = function() {
               window.hopscotch.startTour(window.hopscotch.getCurrTour(), window.hopscotch.getCurrStepNum());
             }
         }, 100);
+        */
+
+        alert("Foo");
+        $('.hamburger-box').click();
+        alert("Bar");
     });
 
     if (state && state.indexOf('hello-cloudpak-for-multicloud-management') === 0) {
