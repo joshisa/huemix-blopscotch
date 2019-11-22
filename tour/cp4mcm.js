@@ -19,7 +19,7 @@ function getCookie(key) {
 };
 
 var tour = {
-  id: 'hello-spark-on-bluemix',
+  id: 'hello-cloudpak-for-multicloud-management',
   steps: [
     {
       target: document.querySelectorAll('.data-nav-title')[0],

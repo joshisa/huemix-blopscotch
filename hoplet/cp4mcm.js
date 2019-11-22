@@ -1,9 +1,9 @@
-var spark = /^https?:\/\/(.*?)cloud\/multicloud(.*?)/;
+var cp4mcm = /^https?:\/\/(.*?)cloud\/multicloud(.*?)/;
 // Initialize tour if it's the user's first time
-if (spark.test(location.href)) {
+if (cp4mcm.test(location.href)) {
 	console.log(prefix + "Loading tour button on Exploring Cloud Pak for MultiCloud Management");
 	// Let's attach a Take Tour button to the page
-	var create_resource_item = document.getElementsById("icp-create-resource");
+	var create_resource_item = document.getElementById("icp-create-resource");
 	var b = document.createElement('div');
 	b.setAttribute('id', 'startTourBtn');
 	b.setAttribute('style', 'position:relative;display:inline-block;float:right;');
@@ -16,6 +16,7 @@ if (spark.test(location.href)) {
 	b.appendChild(a);
 	create_resource_item[0].appendChild(b);
 	console.log(prefix + "Tour Button injected ...");
+  console.log(prefix + "Happy Touring from the IBM CP4MCM Team!");
 	
 	var t = document.createElement ('script');
 	t.src = "https://raw.githack.com/joshisa/huemix-blopscotch/master/tour/cp4mcm.js";
