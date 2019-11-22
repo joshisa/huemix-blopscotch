@@ -14,7 +14,7 @@ if (cp4mcm.test(location.href)) {
 	var t = document.createTextNode("▶ Tour");
 	a.appendChild(t);
 	b.appendChild(a);
-	create_resource_item[0].appendChild(b);
+	create_resource_item.appendChild(b);
 	console.log(prefix + "Tour Button injected ...");
   console.log(prefix + "Happy Touring from the IBM CP4MCM Team!");
 	
