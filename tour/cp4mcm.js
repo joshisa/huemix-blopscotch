@@ -19,7 +19,7 @@ function getCookie(key) {
 };
 
 hopscotch.registerHelper('OpenSideMenu', function() {
-    document.querySelectorAll('div div button span[class="hamburger-box"]')[0].click();
+  $('.hamburger-box').click();
 });
 
 var tour = {
