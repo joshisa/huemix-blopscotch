@@ -3,10 +3,13 @@ var cp4mcm = /^https?:\/\/(.*?)cloud\/multicloud(.*?)/;
 if (cp4mcm.test(location.href)) {
 	console.log(prefix + "Loading tour button on Exploring Cloud Pak for MultiCloud Management");
 	// Let's attach a Take Tour button to the page
+  // <li id="blah"><div id="startTourBtn" style="position:relative;display:inline-block;padding-right:50px;" class="nav-text-button"><a class="button primary" style="width:100%;" href="#">▶ Tour</a></div></li>
 	var create_resource_item = document.getElementById("icp-create-resource");
+  var c = document.createElement('li');
+  c.setAttribute('id', 'itemHolder');
 	var b = document.createElement('div');
 	b.setAttribute('id', 'startTourBtn');
-	b.setAttribute('style', 'position:relative;display:inline-block;float:right;');
+	b.setAttribute('style', 'position:relative;display:inline-block;padding-right:50px;');
 	var a = document.createElement('a');
 	a.setAttribute('class','button primary');
 	a.setAttribute('style','width:100%;');
@@ -14,7 +17,8 @@ if (cp4mcm.test(location.href)) {
 	var t = document.createTextNode("▶ Tour");
 	a.appendChild(t);
 	b.appendChild(a);
-	create_resource_item.appendChild(b);
+  c.appendChild(b);
+	create_resource_item.parentNode.insertBefore(c,create_resource_item);
 	console.log(prefix + "Tour Button injected ...");
   console.log(prefix + "Happy Touring from the IBM CP4MCM Team!");
 	
