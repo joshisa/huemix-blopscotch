@@ -103,7 +103,7 @@ var init = function() {
         document.querySelectorAll('.hamburger-box')[0].click();
         var checkExist = setInterval(function() {
             var element = document.querySelectorAll('#overview')[0];
-            if isVisible(element) {
+            if (isVisible(element)) {
               clearInterval(checkExist);
               window.hopscotch.startTour(window.hopscotch.getCurrTour(), window.hopscotch.getCurrStepNum());
             }
