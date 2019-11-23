@@ -122,12 +122,11 @@ var init = function() {
     hopscotch.registerHelper("openSideMenu", function() {
         console.log("registerHelper invoked ...");
         document.querySelectorAll('.hamburger-box')[0].click();
-        alert("We clicked the hamburger");
         var checkExist = setInterval(function() {
             var element = document.querySelectorAll('#overview')[0];
-            if (isVisible(element)) {
+            if (element) {
               clearInterval(checkExist);
-              console.log(isVisible(document.querySelectorAll('#overview')));
+              console.log(document.querySelectorAll('#overview').id);
               window.hopscotch.startTour(window.hopscotch.getCurrTour(), window.hopscotch.getCurrStepNum());
             }
         }, 2000);
