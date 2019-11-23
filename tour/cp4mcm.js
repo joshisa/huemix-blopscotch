@@ -43,6 +43,27 @@ function isVisible(elem) {
     return false;
 }
 
+/*
+var waitForElementVisible = function(element, callback) {
+    var checkExist = setInterval(function() {
+        $element = typeof element == "function" ? $(element()) : $(element);
+        if ($element.is(':visible')) {
+            clearInterval(checkExist);
+            if (typeof callback == "function") {
+                callback();
+            }
+        }
+    }, 100);
+};
+
+var nextOnCallback = function(callback) {
+    var currentStep = window.hopscotch.getCurrStepNum();
+    callback(function() {
+        window.hopscotch.startTour(theTour, currentStep);
+    });
+};
+*/
+
 var tour = {
     id: 'hello-cloudpak-for-multicloud-management',
     steps: [{
@@ -51,6 +72,7 @@ var tour = {
             content: 'Hey there! IBM is honored to be a partner in your journey with CP4MCM. There\'s plenty of time to read doc and sample code, but join us first on this quick feature fly-by!  This sidebar menu is your main navigation.',
             placement: 'right',
             arrowOffset: 0,
+            multipage: true,
             onNext: ["openSideMenu"]
         },
         {
@@ -99,18 +121,16 @@ var init = function() {
 
     hopscotch.registerHelper("openSideMenu", function() {
         console.log("registerHelper invoked ...");
-        //alert("We are gonna click the hamburger");
         document.querySelectorAll('.hamburger-box')[0].click();
-        alert(document.querySelectorAll('.hamburger-box')[0].id);
-        /*
+        alert("We clicked the hamburger");
         var checkExist = setInterval(function() {
             var element = document.querySelectorAll('#overview')[0];
             if (isVisible(element)) {
               clearInterval(checkExist);
+              console.log(isVisible(document.querySelectorAll('#overview')));
               window.hopscotch.startTour(window.hopscotch.getCurrTour(), window.hopscotch.getCurrStepNum());
             }
-        }, 100);
-        */
+        }, 2000);
     });
 
     if (state && state.indexOf('hello-cloudpak-for-multicloud-management') === 0) {
