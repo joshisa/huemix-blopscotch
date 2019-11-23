@@ -101,6 +101,8 @@ var init = function() {
         console.log("registerHelper invoked ...");
         //alert("We are gonna click the hamburger");
         document.querySelectorAll('.hamburger-box')[0].click();
+        alert(document.querySelectorAll('.hamburger-box')[0].id);
+        /*
         var checkExist = setInterval(function() {
             var element = document.querySelectorAll('#overview')[0];
             if (isVisible(element)) {
@@ -108,6 +110,7 @@ var init = function() {
               window.hopscotch.startTour(window.hopscotch.getCurrTour(), window.hopscotch.getCurrStepNum());
             }
         }, 100);
+        */
     });
 
     if (state && state.indexOf('hello-cloudpak-for-multicloud-management') === 0) {
