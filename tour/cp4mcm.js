@@ -76,12 +76,13 @@ var tour = {
             onNext: ["openSideMenu"]
         },
         {
-            target: document.querySelectorAll('.hamburger-box')[0],
+            target: document.querySelectorAll('.overview')[0],
             title: 'Overview',
             content: 'Hey there! IBM is honored to be a partner in your journey with CP4MCM. There\'s plenty of time to read doc and sample code, but join us first on this quick feature fly-by!  This is the overview.  A great place to understand things at a very high level across all managed systems.',
             placement: 'right',
             arrowOffset: 0,
             delay: 700,
+            multipage: true,
             onNext: ["openSideMenu"]
         },
         {
@@ -90,6 +91,8 @@ var tour = {
             content: 'Architect\'s love this view. It visualizes relationships between components and within an application. With containerization, application boundaries may be hard to understand - but not with CP4MCM and the cool visualizations in this view.',
             placement: 'right',
             arrowOffset: 0,
+            delay: 700,
+            multipage:true,
             onNext: ["openSideMenu"]
         },
     ],
@@ -127,7 +130,7 @@ var init = function() {
         //    var element = document.querySelectorAll('#overview')[0];
         //    if (element) {
         //      clearInterval(checkExist);
-        console.log(document.querySelectorAll('#overview').id);
+        console.log(document.querySelectorAll('#overview')[0].id);
         window.hopscotch.startTour(window.hopscotch.getCurrTour(), window.hopscotch.getCurrStepNum());
         //    }
         //}, 2000);
