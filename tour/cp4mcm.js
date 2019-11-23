@@ -76,12 +76,12 @@ var tour = {
             onNext: ["openSideMenu"]
         },
         {
-            target: document.querySelectorAll('.overview')[0],
+            target: document.querySelectorAll('#overview')[0],
             title: 'Overview',
             content: 'Hey there! IBM is honored to be a partner in your journey with CP4MCM. There\'s plenty of time to read doc and sample code, but join us first on this quick feature fly-by!  This is the overview.  A great place to understand things at a very high level across all managed systems.',
             placement: 'right',
             arrowOffset: 0,
-            delay: 700,
+            delay: 500,
             multipage: true,
             onNext: ["openSideMenu"]
         },
