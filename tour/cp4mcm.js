@@ -72,7 +72,6 @@ var tour = {
             content: 'Hey there! IBM is honored to be a partner in your journey with CP4MCM. There\'s plenty of time to read doc and sample code, but join us first on this quick feature fly-by!  This sidebar menu is your main navigation.',
             placement: 'right',
             arrowOffset: 0,
-            multipage: true,
             onNext: ["openSideMenu"]
         },
         {
@@ -82,7 +81,6 @@ var tour = {
             placement: 'right',
             arrowOffset: 0,
             delay: 500,
-            multipage: true,
             onNext: ["openSideMenu"]
         },
         {
@@ -131,7 +129,7 @@ var init = function() {
         //    if (element) {
         //      clearInterval(checkExist);
         console.log(document.querySelectorAll('#overview')[0].id);
-        window.hopscotch.startTour(window.hopscotch.getCurrTour(), window.hopscotch.getCurrStepNum());
+        // window.hopscotch.startTour(window.hopscotch.getCurrTour(), window.hopscotch.getCurrStepNum());
         //    }
         //}, 2000);
     });
