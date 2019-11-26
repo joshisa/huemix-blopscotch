@@ -75,7 +75,7 @@ var tour = {
             onNext: ["openSideMenu"]
         },
         {
-            target: {get target() { return document.querySelector('#overview');}},
+            target: {get target() { alert(document.querySelector('#overview').id); return document.querySelector('#overview');}},
             title: 'Overview',
             content: 'Hey there! IBM is honored to be a partner in your journey with CP4MCM. There\'s plenty of time to read doc and sample code, but join us first on this quick feature fly-by!  This is the overview.  A great place to understand things at a very high level across all managed systems.',
             placement: 'right',
@@ -123,12 +123,12 @@ var init = function() {
 
     hopscotch.registerHelper("openSideMenu", function() {
         console.log("registerHelper invoked ...");
-        document.querySelectorAll('.hamburger-box')[0].click();
+        document.querySelector('.hamburger-box').click();
         //var checkExist = setInterval(function() {
         //    var element = document.querySelectorAll('#overview')[0];
         //    if (element) {
         //      clearInterval(checkExist);
-        console.log(document.querySelectorAll('#overview')[0].id);
+        console.log(document.querySelector('#overview').id);
         // window.hopscotch.startTour(window.hopscotch.getCurrTour(), window.hopscotch.getCurrStepNum());
         //    }
         //}, 2000);
