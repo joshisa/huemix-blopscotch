@@ -80,12 +80,10 @@ var tour = {
             content: 'Hey there! IBM is honored to be a partner in your journey with CP4MCM. There\'s plenty of time to read doc and sample code, but join us first on this quick feature fly-by!  This is the overview.  A great place to understand things at a very high level across all managed systems.',
             placement: 'right',
             arrowOffset: 0,
-            delay: 1500,
-            onNext: ["openSideMenu"]
         },
         {
-            target: document.querySelectorAll('#topology')[0],
-            title: 'Topology',
+            target: document.querySelector('#overview'),
+            title: 'Overview',
             content: 'Architect\'s love this view. It visualizes relationships between components and within an application. With containerization, application boundaries may be hard to understand - but not with CP4MCM and the cool visualizations in this view.',
             placement: 'right',
             arrowOffset: 0,
