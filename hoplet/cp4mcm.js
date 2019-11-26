@@ -1,4 +1,4 @@
-var cp4mcm = /^https?:\/\/)icp-console(.*?)/;
+var cp4mcm = /^https?:\/\/icp-console(.*?)/;
 // Initialize tour if it's the user's first time
 if (cp4mcm.test(location.href)) {
 	console.log(prefix + "Loading tour button on Exploring Cloud Pak for MultiCloud Management");
