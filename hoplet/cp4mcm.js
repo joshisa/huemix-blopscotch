@@ -1,4 +1,4 @@
-var cp4mcm = /^https?:\/\/(.*?)cloud\/multicloud(.*?)/;
+var cp4mcm = /^https?:\/\/)icp-console(.*?)/;
 // Initialize tour if it's the user's first time
 if (cp4mcm.test(location.href)) {
 	console.log(prefix + "Loading tour button on Exploring Cloud Pak for MultiCloud Management");
@@ -14,7 +14,7 @@ if (cp4mcm.test(location.href)) {
 	a.setAttribute('class','button primary');
 	a.setAttribute('style','width:100%;');
 	a.setAttribute('href', '#');
-	var t = document.createTextNode("▶ Tour");
+	var t = document.createTextNode("▶  Tour");
 	a.appendChild(t);
 	b.appendChild(a);
   c.appendChild(b);
