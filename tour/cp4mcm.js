@@ -43,6 +43,12 @@ function isVisible(elem) {
     return false;
 }
 
+function wrap(el, wrapper) {
+    el.parentNode.insertBefore(wrapper, el);
+    wrapper.appendChild(el);
+}
+
+
 /*
 var waitForElementVisible = function(element, callback) {
     var checkExist = setInterval(function() {
@@ -127,6 +133,11 @@ var init = function() {
         //    if (element) {
         //      clearInterval(checkExist);
         console.log(document.querySelector('#overview').id);
+        // Wrapping React element within a div to avoid Uncaught TypeError: j.getBoundingClientRect is not a function
+        // https://github.com/soenkekluth/react-sticky-state/issues/9
+
+        wrap(document.querySelector('#overview'), document.createElement('div'));
+
         // window.hopscotch.startTour(window.hopscotch.getCurrTour(), window.hopscotch.getCurrStepNum());
         //    }
         //}, 2000);
