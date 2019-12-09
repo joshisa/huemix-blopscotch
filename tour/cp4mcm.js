@@ -82,7 +82,7 @@ var tour = {
             onNext: ["openSideMenu"]
         },
         {
-            target: { get target() { return document.querySelector('#overview-tour').id }},
+            target: { get target() { return '#' + document.querySelector('#overview-tour').id }},
             title: 'Overview',
             content: 'This is the overview.  A great place to understand things at a very high level across all managed systems.',
             placement: 'right',
