@@ -43,7 +43,8 @@ function isVisible(elem) {
     return false;
 }
 
-function wrap(el, wrapper) {
+function wrap(el, wrapper, newid) {
+    wrapper.setAttribute("id", newid)
     el.parentNode.insertBefore(wrapper, el);
     wrapper.appendChild(el);
 }
@@ -81,9 +82,9 @@ var tour = {
             onNext: ["openSideMenu"]
         },
         {
-            target: { get target() { return document.querySelector('#overview').id }},
+            target: document.querySelector('#overview-tour'),
             title: 'Overview',
-            content: 'Hey there! IBM is honored to be a partner in your journey with CP4MCM. There\'s plenty of time to read doc and sample code, but join us first on this quick feature fly-by!  This is the overview.  A great place to understand things at a very high level across all managed systems.',
+            content: 'This is the overview.  A great place to understand things at a very high level across all managed systems.',
             placement: 'right',
             arrowOffset: 0,
             delay: 500,
@@ -136,7 +137,7 @@ var init = function() {
         // Wrapping React element within a div to avoid Uncaught TypeError: j.getBoundingClientRect is not a function
         // https://github.com/soenkekluth/react-sticky-state/issues/9
 
-        wrap(document.querySelector('#overview'), document.createElement('div'));
+        wrap(document.querySelector('#overview'), document.createElement('div'), 'overview-tour');
 
         // window.hopscotch.startTour(window.hopscotch.getCurrTour(), window.hopscotch.getCurrStepNum());
         //    }
