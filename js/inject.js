@@ -1,5 +1,5 @@
 var s = document.createElement('script');
-s.src = "https://raw.githack.com/joshisa/huemix-blopscotch/master/js/hopscotch.min.js";
+s.src = "https://raw.githack.com/joshisa/huemix-blopscotch/master/js/hopscotch.js";
 //s.onload = function() {
 //    this.parentNode.removeChild(this);
 //};
