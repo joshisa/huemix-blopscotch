@@ -79,6 +79,7 @@ var tour = {
             content: 'Hey there! IBM is honored to be a partner in your journey with CP4MCM. There\'s plenty of time to read doc and sample code, but join us first on this quick feature fly-by!  This sidebar menu is your main navigation.',
             placement: 'right',
             arrowOffset: 0,
+            yOffset: -20,
             onNext: ["openSideMenu"]
         },
         {
@@ -104,6 +105,7 @@ var tour = {
             content: 'Architects love this view. It visualizes relationships between components and within an application. With containerization, application boundaries may be hard to understand - but not with CP4MCM. The Topology page uses information from Weave Scope probe to display Kubernetes objects within a cluster. You can view hub cluster resources. As you configure managed clusters, you see more clusters in the Topology view.',
             placement: 'right',
             arrowOffset: 0,
+            yOffset: -10,
             delay: 500,
             onNext: ["openSideMenu"],
             onPrev: ["openSideMenu"],
@@ -120,6 +122,7 @@ var tour = {
             content: 'Developers and Operators appreciate this view. You can use the applications page to create, manage, view details, and troubleshoot application resources, including applications, deployables, channels, and subscriptions.',
             placement: 'right',
             arrowOffset: 0,
+            yOffset: -10,
             delay: 500,
             onNext: ["openSideMenu"],
             onPrev: ["openSideMenu"],
@@ -136,6 +139,7 @@ var tour = {
             content: 'Operators need this view. The needs of one cluster rhyme with the needs of many. Find what you\'re looking for. There\'s alot to sift through.  With the search page, you get visibility into your resources across all your clusters. You can save your popular ones and the platform will happily suggest other filtered views for your consideration.',
             placement: 'right',
             arrowOffset: 0,
+            yOffset: -10,
             delay: 500,
             onNext: ["openSideMenu"],
             onPrev: ["openSideMenu"],
@@ -147,11 +151,12 @@ var tour = {
             },
         },
         {
-            target: { get target() { return '#search' }},
+            target: { get target() { return '#clusters' }},
             title: 'Clusters Page',
             content: 'Operators use this view when thinking about their environments from a top-down perspective.',
             placement: 'right',
             arrowOffset: 0,
+            yOffset: -10,
             delay: 500,
             onNext: ["openSideMenu"],
             onPrev: ["openSideMenu"],
@@ -163,11 +168,12 @@ var tour = {
             },
         },
         {
-            target: { get target() { return '#search' }},
+            target: { get target() { return '#policies' }},
             title: 'Governance and Risk Page',
             content: 'SecOps care about this view. ',
             placement: 'right',
             arrowOffset: 0,
+            yOffset: -10,
             delay: 500,
             onNext: ["openSideMenu"],
             onPrev: ["openSideMenu"],
@@ -179,11 +185,12 @@ var tour = {
             },
         },
         {
-            target: { get target() { return '#search' }},
+            target: { get target() { return '#monitoring' }},
             title: 'Monitoring Page',
             content: 'Operators need this view. The needs of one cluster rhyme with the needs of many. With a federated monitoring Grafana Dashboard, you have resource metrics at your fingertips.',
             placement: 'right',
             arrowOffset: 0,
+            yOffset: -10,
             delay: 500,
             onNext: ["openSideMenu"],
             onPrev: ["openSideMenu"],
@@ -195,11 +202,12 @@ var tour = {
             },
         },
         {
-            target: { get target() { return '#search' }},
+            target: { get target() { return '#releases' }},
             title: 'Helm Releases Page',
             content: 'Developers and Operators manage resources in this view. Content is king and having access to world-class IBM and opensource middleware gives your organization advantages.',
             placement: 'right',
             arrowOffset: 0,
+            yOffset: -10,
             delay: 500,
             onNext: ["openSideMenu"],
             onPrev: ["openSideMenu"],
@@ -211,11 +219,12 @@ var tour = {
             },
         },
         {
-            target: { get target() { return '#search' }},
+            target: { get target() { return '#local' }},
             title: 'Local Cluster Drill Down',
             content: 'Operators infrequently use this view to look at the MCM Hub\'s cluster underpinning its behavior. Even the best maintained homes have their crawl spaces inspected once in a while.',
             placement: 'right',
             arrowOffset: 0,
+            yOffset: -10,
             delay: 500,
             onPrev: ["openSideMenu"],
             onClose: function() {
@@ -254,13 +263,13 @@ var init = function() {
         state = hopscotch.getState();
 
     hopscotch.registerHelper("openSideMenu", function() {
-        console.log("registerHelper invoked ...");
+        //keep console.log("registerHelper invoked ...");
         document.querySelector('.hamburger-box').click();
         //var checkExist = setInterval(function() {
         //    var element = document.querySelectorAll('#overview')[0];
         //    if (element) {
         //      clearInterval(checkExist);
-        console.log(document.querySelector('#overview').id);
+        //keep console.log(document.querySelector('#overview').id);
         // Wrapping React element within a div to avoid Uncaught TypeError: j.getBoundingClientRect is not a function
         // https://github.com/soenkekluth/react-sticky-state/issues/9
 
