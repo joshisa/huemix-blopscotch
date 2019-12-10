@@ -87,6 +87,7 @@ var tour = {
             content: 'A great place to understand things at a very high level across all managed systems. Use the Overview page to view, manage, and reorganize the dashboard of your cluster information. You can view details of your clusters and other cloud service providers that IBM Multicloud Manager supports. You can also view details about your applications. The Overview dashboard is continuously refreshed in real time.',
             placement: 'right',
             arrowOffset: 0,
+            yOffset: -10,
             delay: 500,
             onNext: ["openSideMenu"],
             onPrev: ["openSideMenu"],
@@ -130,11 +131,92 @@ var tour = {
             },
         },
         {
-            target: '#search',
+            target: { get target() { return '#search' }},
             title: 'Search Page',
             content: 'Operators need this view. The needs of one cluster rhyme with the needs of many. Find what you\'re looking for. There\'s alot to sift through.  With the search page, you get visibility into your resources across all your clusters. You can save your popular ones and the platform will happily suggest other filtered views for your consideration.',
             placement: 'right',
             arrowOffset: 0,
+            delay: 500,
+            onNext: ["openSideMenu"],
+            onPrev: ["openSideMenu"],
+            onClose: function() {
+                setCookie("toured", "toured");
+            },
+            onError: function() {
+                setCookie("toured", "toured");
+            },
+        },
+        {
+            target: { get target() { return '#search' }},
+            title: 'Clusters Page',
+            content: 'Operators use this view when thinking about their environments from a top-down perspective.',
+            placement: 'right',
+            arrowOffset: 0,
+            delay: 500,
+            onNext: ["openSideMenu"],
+            onPrev: ["openSideMenu"],
+            onClose: function() {
+                setCookie("toured", "toured");
+            },
+            onError: function() {
+                setCookie("toured", "toured");
+            },
+        },
+        {
+            target: { get target() { return '#search' }},
+            title: 'Governance and Risk Page',
+            content: 'SecOps care about this view. ',
+            placement: 'right',
+            arrowOffset: 0,
+            delay: 500,
+            onNext: ["openSideMenu"],
+            onPrev: ["openSideMenu"],
+            onClose: function() {
+                setCookie("toured", "toured");
+            },
+            onError: function() {
+                setCookie("toured", "toured");
+            },
+        },
+        {
+            target: { get target() { return '#search' }},
+            title: 'Monitoring Page',
+            content: 'Operators need this view. The needs of one cluster rhyme with the needs of many. With a federated monitoring Grafana Dashboard, you have resource metrics at your fingertips.',
+            placement: 'right',
+            arrowOffset: 0,
+            delay: 500,
+            onNext: ["openSideMenu"],
+            onPrev: ["openSideMenu"],
+            onClose: function() {
+                setCookie("toured", "toured");
+            },
+            onError: function() {
+                setCookie("toured", "toured");
+            },
+        },
+        {
+            target: { get target() { return '#search' }},
+            title: 'Helm Releases Page',
+            content: 'Developers and Operators manage resources in this view. Content is king and having access to world-class IBM and opensource middleware gives your organization advantages.',
+            placement: 'right',
+            arrowOffset: 0,
+            delay: 500,
+            onNext: ["openSideMenu"],
+            onPrev: ["openSideMenu"],
+            onClose: function() {
+                setCookie("toured", "toured");
+            },
+            onError: function() {
+                setCookie("toured", "toured");
+            },
+        },
+        {
+            target: { get target() { return '#search' }},
+            title: 'Local Cluster Drill Down',
+            content: 'Operators infrequently use this view to look at the MCM Hub\'s cluster underpinning its behavior. Even the best maintained homes have their crawl spaces inspected once in a while.',
+            placement: 'right',
+            arrowOffset: 0,
+            delay: 500,
             onPrev: ["openSideMenu"],
             onClose: function() {
                 setCookie("toured", "toured");
