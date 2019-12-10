@@ -90,13 +90,11 @@ var tour = {
             delay: 500,
         },
         {
-            target: document.querySelector('#overview'),
-            title: 'Overview',
+            target: { get target() { return '#topology' }},,
+            title: 'Topology View',
             content: 'Architect\'s love this view. It visualizes relationships between components and within an application. With containerization, application boundaries may be hard to understand - but not with CP4MCM and the cool visualizations in this view.',
             placement: 'right',
             arrowOffset: 0,
-            delay: 700,
-            onNext: ["openSideMenu"]
         },
     ],
     showPrevButton: true,
