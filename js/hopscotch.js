@@ -414,6 +414,9 @@
       if (typeof step.target === 'string') {
         //Just one target to test. Check and return its results.
         return utils.getStepTargetHelper(step.target);
+      } else if (typeof step.target.target === 'string') {
+        //We're using a getter here. Check and return its results.
+        return utils.getStepTargetHelper(step.target.target);
       } else if (Array.isArray(step.target)) {
         // Multiple items to check. Check each and return the first success.
         // Assuming they are all strings.
