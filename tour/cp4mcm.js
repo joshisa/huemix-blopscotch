@@ -82,7 +82,7 @@ var tour = {
             onNext: ["openSideMenu"]
         },
         {
-            target: { get target() { return '#overview-tour' }},
+            target: { get target() { return '#overview' }},
             title: 'Overview',
             content: 'This is the overview.  A great place to understand things at a very high level across all managed systems.',
             placement: 'right',
@@ -137,7 +137,7 @@ var init = function() {
         // Wrapping React element within a div to avoid Uncaught TypeError: j.getBoundingClientRect is not a function
         // https://github.com/soenkekluth/react-sticky-state/issues/9
 
-        wrap(document.querySelector('#overview'), document.createElement('div'), 'overview-tour');
+        //wrap(document.querySelector('#overview'), document.createElement('div'), 'overview-tour');
 
         // window.hopscotch.startTour(window.hopscotch.getCurrTour(), window.hopscotch.getCurrStepNum());
         //    }
