@@ -88,7 +88,14 @@ var tour = {
             placement: 'right',
             arrowOffset: 0,
             delay: 500,
-            onNext: ["openSideMenu"]
+            onNext: ["openSideMenu"],
+            onPrev: ["openSideMenu"],
+            onClose: function() {
+                setCookie("toured", "toured");
+            },
+            onError: function() {
+                setCookie("toured", "toured");
+            },
         },
         {
             target: { get target() { return '#topology' }},
@@ -97,23 +104,44 @@ var tour = {
             placement: 'right',
             arrowOffset: 0,
             delay: 500,
-            onNext: ["openSideMenu"]
+            onNext: ["openSideMenu"],
+            onPrev: ["openSideMenu"],
+            onClose: function() {
+                setCookie("toured", "toured");
+            },
+            onError: function() {
+                setCookie("toured", "toured");
+            },
         },
         {
             target: { get target() { return '#applications' }},
             title: 'Applications Page',
             content: 'Developers and Operators appreciate this view. You can use the applications page to create, manage, view details, and troubleshoot application resources, including applications, deployables, channels, and subscriptions.',
             placement: 'right',
-            arrowOffset: 50,
+            arrowOffset: 0,
             delay: 500,
-            onNext: ["openSideMenu"]
+            onNext: ["openSideMenu"],
+            onPrev: ["openSideMenu"],
+            onClose: function() {
+                setCookie("toured", "toured");
+            },
+            onError: function() {
+                setCookie("toured", "toured");
+            },
         },
         {
             target: '#search',
             title: 'Search Page',
             content: 'Operators need this view. The needs of one cluster rhyme with the needs of many. Find what you\'re looking for. There\'s alot to sift through.  With the search page, you get visibility into your resources across all your clusters. You can save your popular ones and the platform will happily suggest other filtered views for your consideration.',
             placement: 'right',
-            arrowOffset: 50,
+            arrowOffset: 0,
+            onPrev: ["openSideMenu"],
+            onClose: function() {
+                setCookie("toured", "toured");
+            },
+            onError: function() {
+                setCookie("toured", "toured");
+            },
         },
     ],
     showPrevButton: true,
