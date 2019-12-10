@@ -284,7 +284,8 @@ var init = function() {
                     placement: 'bottom',
                     title: 'Friend, interested in a tour?',
                     content: 'We shall not cease from exploration<br>And the end of all our exploring<br>Will be to arrive where we started<br>And know the place for the first time.<br>∞T.S. Eliot∞',
-                    yOffset: -25,
+                    xOffset: -15,
+                    yOffset: -15,
                     arrowOffset: 20,
                     width: 240
                 });
