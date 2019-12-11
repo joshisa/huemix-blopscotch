@@ -74,9 +74,73 @@ var nextOnCallback = function(callback) {
 var tour = {
     id: 'hello-cloudpak-for-multicloud-management',
     steps: [{
+            target: document.querySelector('#icp-user-dropdown'),
+            title: 'User DropDown Menu',
+            content: '<b>Hey there!</b> IBM is honored to be a partner in your multicloud journey. There\'s plenty of time to read doc and explore sample code, but join us first on this quick feature fly-by!<br/>Through this dropdown, access features in the context of your account here.  Things like <span style=\"color:blue\">client command line configuration, default home pages and your login session</span>',
+            placement: 'bottom',
+            arrowOffset: 0,
+            yOffset: -20,
+            onNext: ["openUserMenu"]
+        },
+        {
+            target: { get target() { return '#icp-user' }},
+            title: 'User DropDown Menu',
+            content: 'Quick reference on the current user name, role and account.',
+            placement: 'left',
+            arrowOffset: 0,
+            yOffset: 0,
+            onNext: ["openUserMenu"],
+            onPrevious: ["openUserMenu"],
+            onClose: function() {
+                setCookie("toured", "toured");
+            },
+            onError:["openUserMenu"],
+        },
+        {
+            target: { get target() { return '#configure-client' }},
+            title: 'User DropDown Menu',
+            content: 'To access your cluster by using the command line interface (CLI), you must install and configure kubectl, the Kubernetes command line tool. For convenience, the cluster configuration details are provided via this menu entry.  This configuration expires in 12 hours. To continue to use the CLI, you must log in and reconfigure kubectl every 12 hours. To avoid this limitation, you can configure your CLI by using service accounts.',
+            placement: 'left',
+            arrowOffset: 0,
+            yOffset: 0,
+            onNext: ["openUserMenu"],
+            onPrevious: ["openUserMenu"],
+            onClose: function() {
+                setCookie("toured", "toured");
+            },
+            onError:["openUserMenu"],
+        },
+        {
+            target: { get target() { return '#icp-homepage' }},
+            title: 'User DropDown Menu',
+            content: 'Choose your favorite page to see first!',
+            placement: 'left',
+            arrowOffset: 0,
+            yOffset: 0,
+            onNext: ["openUserMenu"],
+            onPrevious: ["openUserMenu"],
+            onClose: function() {
+                setCookie("toured", "toured");
+            },
+            onError:["openUserMenu"],
+        },
+        {
+            target: { get target() { return '#icp-logout' }},
+            title: 'User DropDown Menu',
+            content: 'Would hate to see you go, but this is where you can exit a user session',
+            placement: 'left',
+            arrowOffset: 0,
+            yOffset: 0,
+            onPrevious: ["openUserMenu"],
+            onClose: function() {
+                setCookie("toured", "toured");
+            },
+            onError:["openUserMenu"],
+        },
+        {
             target: document.querySelectorAll('.hamburger-box')[0],
             title: 'Hamburger Menu',
-            content: 'Hey there! IBM is honored to be a partner in your journey with CP4MCM. There\'s plenty of time to read doc and sample code, but join us first on this quick feature fly-by!  This sidebar menu is your main navigation.',
+            content: 'This side menu is your main navigation.',
             placement: 'right',
             arrowOffset: 0,
             yOffset: -20,
@@ -95,9 +159,7 @@ var tour = {
             onClose: function() {
                 setCookie("toured", "toured");
             },
-            onError: function() {
-                setCookie("toured", "toured");
-            },
+            onError:["openSideMenu"],
         },
         {
             target: { get target() { return '#topology' }},
@@ -112,9 +174,7 @@ var tour = {
             onClose: function() {
                 setCookie("toured", "toured");
             },
-            onError: function() {
-                setCookie("toured", "toured");
-            },
+            onError:["openSideMenu"],
         },
         {
             target: { get target() { return '#applications' }},
@@ -129,9 +189,7 @@ var tour = {
             onClose: function() {
                 setCookie("toured", "toured");
             },
-            onError: function() {
-                setCookie("toured", "toured");
-            },
+            onError:["openSideMenu"],
         },
         {
             target: { get target() { return '#search' }},
@@ -146,9 +204,7 @@ var tour = {
             onClose: function() {
                 setCookie("toured", "toured");
             },
-            onError: function() {
-                setCookie("toured", "toured");
-            },
+            onError:["openSideMenu"],
         },
         {
             target: { get target() { return '#clusters' }},
@@ -163,9 +219,7 @@ var tour = {
             onClose: function() {
                 setCookie("toured", "toured");
             },
-            onError: function() {
-                setCookie("toured", "toured");
-            },
+            onError:["openSideMenu"],
         },
         {
             target: { get target() { return '#policies' }},
@@ -180,9 +234,7 @@ var tour = {
             onClose: function() {
                 setCookie("toured", "toured");
             },
-            onError: function() {
-                setCookie("toured", "toured");
-            },
+            onError:["openSideMenu"],
         },
         {
             target: { get target() { return '#monitoring' }},
@@ -197,9 +249,7 @@ var tour = {
             onClose: function() {
                 setCookie("toured", "toured");
             },
-            onError: function() {
-                setCookie("toured", "toured");
-            },
+            onError:["openSideMenu"],
         },
         {
             target: { get target() { return '#releases' }},
@@ -214,9 +264,7 @@ var tour = {
             onClose: function() {
                 setCookie("toured", "toured");
             },
-            onError: function() {
-                setCookie("toured", "toured");
-            },
+            onError:["openSideMenu"],
         },
         {
             target: { get target() { return '#local' }},
@@ -226,11 +274,26 @@ var tour = {
             arrowOffset: 0,
             yOffset: -10,
             delay: 500,
+            multipage: true,
+            onNext: function() {
+              window.location="/multicloud/overview"
+            },
             onPrev: ["openSideMenu"],
             onClose: function() {
                 setCookie("toured", "toured");
             },
-            onError: function() {
+            onError: ["openSideMenu"],
+        },
+        {
+            target: '.bx--tooltip__trigger secondary-header-tooltip-icon',
+            title: 'Overview Page',
+            content: '',
+            placement: 'bottom',
+            arrowOffset: 0,
+            xOffset: -20,
+            delay: 500,
+            onPrev: ["openSideMenu"],
+            onClose: function() {
                 setCookie("toured", "toured");
             },
         },
@@ -261,6 +324,12 @@ var init = function() {
         calloutId = 'startTourCallout',
         mgr = hopscotch.getCalloutManager(),
         state = hopscotch.getState();
+
+    hopscotch.registerHelper("openUserMenu", function() {
+        var event = document.createEvent("SVGEvents");
+        event.initEvent("click",true,true);
+        document.querySelector('#user-dropdown').dispatchEvent(event);
+    });
 
     hopscotch.registerHelper("openSideMenu", function() {
         //keep console.log("registerHelper invoked ...");
