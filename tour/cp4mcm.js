@@ -96,7 +96,7 @@ var tour = {
             arrowOffset: 0,
             yOffset: 0,
             onNext: ["openUserMenu"],
-            onPrevious: ["openUserMenu"],
+            onPrev: ["openUserMenu"],
             onClose: function() {
                 setCookie("toured", "toured");
             },
@@ -110,7 +110,7 @@ var tour = {
             arrowOffset: 0,
             yOffset: 0,
             onNext: ["openUserMenu"],
-            onPrevious: ["openUserMenu"],
+            onPrev: ["openUserMenu"],
             onClose: function() {
                 setCookie("toured", "toured");
             },
@@ -124,7 +124,7 @@ var tour = {
             arrowOffset: 0,
             yOffset: 0,
             onNext: ["openUserMenu"],
-            onPrevious: ["openUserMenu"],
+            onPrev: ["openUserMenu"],
             onClose: function() {
                 setCookie("toured", "toured");
             },
@@ -138,7 +138,7 @@ var tour = {
             arrowOffset: 0,
             yOffset: 0,
             onNext: ["closeUserMenu"],
-            onPrevious: ["openUserMenu"],
+            onPrev: ["openUserMenu"],
             onClose: function() {
                 setCookie("toured", "toured");
             },
@@ -151,7 +151,7 @@ var tour = {
             placement: 'right',
             arrowOffset: 0,
             yOffset: -20,
-            onPrevious: ["openUserMenu"],
+            onPrev: ["openUserMenu"],
             onNext: ["openSideMenu"],
             onClose: function() {
                 setCookie("toured", "toured");
@@ -299,7 +299,7 @@ var tour = {
         {
             target: '.bx--tooltip__trigger secondary-header-tooltip-icon',
             title: 'Overview Page',
-            content: '',
+            content: 'Foobar',
             placement: 'bottom',
             arrowOffset: 0,
             xOffset: -20,
