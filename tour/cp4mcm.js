@@ -297,14 +297,14 @@ var tour = {
             onError: ["openSideMenu"],
         },
         {
-            target: { get target() { return '#' + document.querySelector('.bx--tooltip__trigger').firstElementChild.id }},
+            target: 'header',
             title: 'Overview Page',
             content: 'View operations details across all of your cloud providers.',
             placement: 'bottom',
             arrowOffset: 0,
             xOffset: 0,
             multipage: true,
-            delay: 4000,
+            delay: 500,
             onPrev: ["openSideMenu"],
             onClose: function() {
                 setCookie("toured", "toured");
@@ -372,6 +372,7 @@ var init = function() {
     if (state && state.indexOf('hello-cloudpak-for-multicloud-management') === 0) {
         // Already started the tour at some point!
         hopscotch.startTour(tour);
+        setInterval(function () { hopscotch.nextStep() }, 3000);
     } else {
         // Looking at the page for the first(?) time.
         if (!getCookie("toured")) {
@@ -396,6 +397,7 @@ var init = function() {
             mgr.removeAllCallouts();
             deleteCookie('toured');
             hopscotch.startTour(tour);
+            setInterval(function () { hopscotch.nextStep() }, 3000);
         }
     });
 
