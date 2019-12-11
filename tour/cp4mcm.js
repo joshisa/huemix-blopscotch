@@ -297,9 +297,9 @@ var tour = {
             onError: ["openSideMenu"],
         },
         {
-            target: document.querySelector('.bx--tooltip__trigger').firstElementChild,
+            target: { get target() { return '#' + document.querySelector('.bx--tooltip__trigger').firstElementChild.id }},
             title: 'Overview Page',
-            content: 'Foobar Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum ',
+            content: 'View operations details across all of your cloud providers.',
             placement: 'bottom',
             arrowOffset: 0,
             xOffset: 0,
