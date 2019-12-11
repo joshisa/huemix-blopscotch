@@ -74,7 +74,7 @@ var nextOnCallback = function(callback) {
 var tour = {
     id: 'hello-cloudpak-for-multicloud-management',
     steps: [{
-            target: document.querySelector('#icp-user-dropdown'),
+            target: 'icp-user-dropdown',
             title: 'User DropDown Menu',
             content: '<b>Hey there!</b> IBM is honored to be a partner in your multicloud journey. There\'s plenty of time to read doc and explore sample code, but join us first on this quick feature fly-by!<br/>Through this dropdown, access features in the context of your account here.  Things like <span style=\"color:blue\">client command line configuration, setting a default home page and your login session</span>',
             placement: 'bottom',
@@ -95,7 +95,6 @@ var tour = {
             placement: 'left',
             arrowOffset: 0,
             yOffset: 0,
-            delay: 500,
             onNext: ["openUserMenu"],
             onPrevious: ["openUserMenu"],
             onClose: function() {
@@ -110,7 +109,6 @@ var tour = {
             placement: 'left',
             arrowOffset: 0,
             yOffset: 0,
-            delay: 500,
             onNext: ["openUserMenu"],
             onPrevious: ["openUserMenu"],
             onClose: function() {
@@ -133,7 +131,7 @@ var tour = {
             onError:["openUserMenu"],
         },
         {
-            target: { get target() { return '#icp-logout' }},
+            target: 'icp-logout',
             title: 'Logout',
             content: 'Would hate to see you go, but this is where you can exit a user session',
             placement: 'left',
