@@ -90,19 +90,22 @@ var tour = {
         },
         {
             target: 'icp-user',
-            title: 'User DropDown Menu',
+            title: 'User Deets',
             content: 'Quick reference on the current user name, role and account.',
             placement: 'left',
             arrowOffset: 0,
             yOffset: 0,
             delay: 500,
+            onNext: ["openUserMenu"],
+            onPrevious: ["openUserMenu"],
             onClose: function() {
                 setCookie("toured", "toured");
             },
+            onError:["openUserMenu"],
         },
         {
             target: 'configure-client',
-            title: 'User DropDown Menu',
+            title: 'kubectl CLI Config',
             content: 'To access your cluster by using the command line interface (CLI), you must install and configure kubectl, the Kubernetes command line tool. For convenience, the cluster configuration details are provided via this menu entry.  This configuration expires in 12 hours. To continue to use the CLI, you must log in and reconfigure kubectl every 12 hours. To avoid this limitation, you can configure your CLI by using service accounts.',
             placement: 'left',
             arrowOffset: 0,
@@ -117,7 +120,7 @@ var tour = {
         },
         {
             target: 'icp-homepage',
-            title: 'User DropDown Menu',
+            title: 'Favorite Page',
             content: 'Choose your favorite page to see first!',
             placement: 'left',
             arrowOffset: 0,
@@ -131,11 +134,12 @@ var tour = {
         },
         {
             target: { get target() { return '#icp-logout' }},
-            title: 'User DropDown Menu',
+            title: 'Logout',
             content: 'Would hate to see you go, but this is where you can exit a user session',
             placement: 'left',
             arrowOffset: 0,
             yOffset: 0,
+            onNext: ["closeUserMenu"],
             onPrevious: ["openUserMenu"],
             onClose: function() {
                 setCookie("toured", "toured");
@@ -337,9 +341,15 @@ var init = function() {
 
     hopscotch.registerHelper("openUserMenu", function() {
         console.log("openUserMenu invoked ...");
-        var event = document.createEvent("SVGEvents");
-        event.initEvent("click",true,true);
-        document.querySelector('#user-dropdown').dispatchEvent(event);
+        //var event = document.createEvent("SVGEvents");
+        //event.initEvent("click",true,true);
+        //document.querySelector('#user-dropdown').dispatchEvent(event);
+        document.querySelector('#icp-user-dropdown').firstElementChild.classList.add("is-open");
+    });
+
+    hopscotch.registerHelper("closeUserMenu", function() {
+        console.log("closeUserMenu invoked ...");
+        document.querySelector('#icp-user-dropdown').firstElementChild.classList.remove("is-open");
     });
 
     hopscotch.registerHelper("openSideMenu", function() {
