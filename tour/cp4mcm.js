@@ -76,11 +76,12 @@ var tour = {
     steps: [{
             target: document.querySelector('#icp-user-dropdown'),
             title: 'User DropDown Menu',
-            content: '<b>Hey there!</b> IBM is honored to be a partner in your multicloud journey. There\'s plenty of time to read doc and explore sample code, but join us first on this quick feature fly-by!<br/>Through this dropdown, access features in the context of your account here.  Things like <span style=\"color:blue\">client command line configuration, default home pages and your login session</span>',
+            content: '<b>Hey there!</b> IBM is honored to be a partner in your multicloud journey. There\'s plenty of time to read doc and explore sample code, but join us first on this quick feature fly-by!<br/>Through this dropdown, access features in the context of your account here.  Things like <span style=\"color:blue\">client command line configuration, setting a default home page and your login session</span>',
             placement: 'bottom',
             arrowOffset: 260,
-            xOffset: -290,
+            xOffset: -280,
             yOffset: 10,
+            delay: 500,
             onNext: ["openUserMenu"],
             onClose: function() {
                 setCookie("toured", "toured");
@@ -88,26 +89,25 @@ var tour = {
             onError:["openUserMenu"],
         },
         {
-            target: { get target() { return '#icp-user' }},
+            target: 'icp-user',
             title: 'User DropDown Menu',
             content: 'Quick reference on the current user name, role and account.',
             placement: 'left',
             arrowOffset: 0,
             yOffset: 0,
-            onNext: ["openUserMenu"],
-            onPrevious: ["openUserMenu"],
+            delay: 500,
             onClose: function() {
                 setCookie("toured", "toured");
             },
-            onError:["openUserMenu"],
         },
         {
-            target: { get target() { return '#configure-client' }},
+            target: 'configure-client',
             title: 'User DropDown Menu',
             content: 'To access your cluster by using the command line interface (CLI), you must install and configure kubectl, the Kubernetes command line tool. For convenience, the cluster configuration details are provided via this menu entry.  This configuration expires in 12 hours. To continue to use the CLI, you must log in and reconfigure kubectl every 12 hours. To avoid this limitation, you can configure your CLI by using service accounts.',
             placement: 'left',
             arrowOffset: 0,
             yOffset: 0,
+            delay: 500,
             onNext: ["openUserMenu"],
             onPrevious: ["openUserMenu"],
             onClose: function() {
@@ -116,7 +116,7 @@ var tour = {
             onError:["openUserMenu"],
         },
         {
-            target: { get target() { return '#icp-homepage' }},
+            target: 'icp-homepage',
             title: 'User DropDown Menu',
             content: 'Choose your favorite page to see first!',
             placement: 'left',
@@ -149,7 +149,12 @@ var tour = {
             placement: 'right',
             arrowOffset: 0,
             yOffset: -20,
-            onNext: ["openSideMenu"]
+            onPrevious: ["openUserMenu"],
+            onNext: ["openSideMenu"],
+            onClose: function() {
+                setCookie("toured", "toured");
+            },
+            onError:["openSideMenu"],
         },
         {
             target: { get target() { return '#overview' }},
