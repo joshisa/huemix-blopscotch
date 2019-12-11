@@ -288,7 +288,7 @@ var tour = {
             delay: 500,
             multipage: true,
             onNext: function() {
-              window.location="/multicloud/overview"
+              window.location.href ="/multicloud/overview";
             },
             onPrev: ["openSideMenu"],
             onClose: function() {
@@ -297,13 +297,14 @@ var tour = {
             onError: ["openSideMenu"],
         },
         {
-            target: '.bx--tooltip__trigger secondary-header-tooltip-icon',
+            target: document.querySelector('.bx--tooltip__trigger').firstElementChild,
             title: 'Overview Page',
-            content: 'Foobar',
+            content: 'Foobar Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum ',
             placement: 'bottom',
             arrowOffset: 0,
-            xOffset: -20,
-            delay: 500,
+            xOffset: 0,
+            multipage: true,
+            delay: 4000,
             onPrev: ["openSideMenu"],
             onClose: function() {
                 setCookie("toured", "toured");
