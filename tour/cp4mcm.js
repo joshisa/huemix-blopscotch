@@ -165,7 +165,7 @@ var tour = {
             placement: 'right',
             arrowOffset: 0,
             yOffset: -10,
-            delay: 500,
+            delay: 2000,
             onNext: ["openSideMenu"],
             onPrev: ["openSideMenu"],
             onClose: function() {
@@ -180,7 +180,7 @@ var tour = {
             placement: 'right',
             arrowOffset: 0,
             yOffset: -10,
-            delay: 500,
+            delay: 2000,
             onNext: ["openSideMenu"],
             onPrev: ["openSideMenu"],
             onClose: function() {
@@ -195,7 +195,7 @@ var tour = {
             placement: 'right',
             arrowOffset: 0,
             yOffset: -10,
-            delay: 500,
+            delay: 2000,
             onNext: ["openSideMenu"],
             onPrev: ["openSideMenu"],
             onClose: function() {
@@ -210,7 +210,7 @@ var tour = {
             placement: 'right',
             arrowOffset: 0,
             yOffset: -10,
-            delay: 500,
+            delay: 2000,
             onNext: ["openSideMenu"],
             onPrev: ["openSideMenu"],
             onClose: function() {
@@ -225,7 +225,7 @@ var tour = {
             placement: 'right',
             arrowOffset: 0,
             yOffset: -10,
-            delay: 500,
+            delay: 2000,
             onNext: ["openSideMenu"],
             onPrev: ["openSideMenu"],
             onClose: function() {
@@ -240,7 +240,7 @@ var tour = {
             placement: 'right',
             arrowOffset: 0,
             yOffset: -10,
-            delay: 500,
+            delay: 2000,
             onNext: ["openSideMenu"],
             onPrev: ["openSideMenu"],
             onClose: function() {
@@ -255,7 +255,7 @@ var tour = {
             placement: 'right',
             arrowOffset: 0,
             yOffset: -10,
-            delay: 500,
+            delay: 2000,
             onNext: ["openSideMenu"],
             onPrev: ["openSideMenu"],
             onClose: function() {
@@ -270,7 +270,7 @@ var tour = {
             placement: 'right',
             arrowOffset: 0,
             yOffset: -10,
-            delay: 500,
+            delay: 2000,
             onNext: ["openSideMenu"],
             onPrev: ["openSideMenu"],
             onClose: function() {
@@ -285,7 +285,7 @@ var tour = {
             placement: 'right',
             arrowOffset: 0,
             yOffset: -10,
-            delay: 500,
+            delay: 2000,
             multipage: true,
             onNext: function() {
               window.location.href ="/multicloud/overview";
@@ -301,8 +301,8 @@ var tour = {
             title: 'Overview Page',
             content: 'View operations details across all of your cloud providers.',
             placement: 'bottom',
-            arrowOffset: 0,
-            xOffset: 0,
+            arrowOffset: 100,
+            xOffset: 800,
             multipage: true,
             delay: 500,
             onPrev: ["openSideMenu"],
@@ -372,7 +372,7 @@ var init = function() {
     if (state && state.indexOf('hello-cloudpak-for-multicloud-management') === 0) {
         // Already started the tour at some point!
         hopscotch.startTour(tour);
-        setInterval(function () { hopscotch.nextStep() }, 3000);
+        setInterval(function () { hopscotch.nextStep() }, 7000);
     } else {
         // Looking at the page for the first(?) time.
         if (!getCookie("toured")) {
@@ -397,7 +397,7 @@ var init = function() {
             mgr.removeAllCallouts();
             deleteCookie('toured');
             hopscotch.startTour(tour);
-            setInterval(function () { hopscotch.nextStep() }, 3000);
+            setInterval(function () { hopscotch.nextStep() }, 7000);
         }
     });
 
