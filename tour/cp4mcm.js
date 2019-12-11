@@ -78,9 +78,9 @@ var tour = {
             title: 'User DropDown Menu',
             content: '<b>Hey there!</b> IBM is honored to be a partner in your multicloud journey. There\'s plenty of time to read doc and explore sample code, but join us first on this quick feature fly-by!<br/>Through this dropdown, access features in the context of your account here.  Things like <span style=\"color:blue\">client command line configuration, default home pages and your login session</span>',
             placement: 'bottom',
-            arrowOffset: 100,
-            xOffset: -100,
-            yOffset: 20,
+            arrowOffset: 260,
+            xOffset: -290,
+            yOffset: 10,
             onNext: ["openUserMenu"],
             onClose: function() {
                 setCookie("toured", "toured");
