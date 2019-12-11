@@ -78,9 +78,14 @@ var tour = {
             title: 'User DropDown Menu',
             content: '<b>Hey there!</b> IBM is honored to be a partner in your multicloud journey. There\'s plenty of time to read doc and explore sample code, but join us first on this quick feature fly-by!<br/>Through this dropdown, access features in the context of your account here.  Things like <span style=\"color:blue\">client command line configuration, default home pages and your login session</span>',
             placement: 'bottom',
-            arrowOffset: 0,
-            yOffset: -20,
-            onNext: ["openUserMenu"]
+            arrowOffset: 100,
+            xOffset: -100,
+            yOffset: 20,
+            onNext: ["openUserMenu"],
+            onClose: function() {
+                setCookie("toured", "toured");
+            },
+            onError:["openUserMenu"],
         },
         {
             target: { get target() { return '#icp-user' }},
@@ -326,6 +331,7 @@ var init = function() {
         state = hopscotch.getState();
 
     hopscotch.registerHelper("openUserMenu", function() {
+        console.log("openUserMenu invoked ...");
         var event = document.createEvent("SVGEvents");
         event.initEvent("click",true,true);
         document.querySelector('#user-dropdown').dispatchEvent(event);
