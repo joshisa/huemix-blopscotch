@@ -413,7 +413,7 @@ var tour = {
     onEnd: function() {
         setCookie("toured", "toured");
         clearInterval(autoplay);
-    }
+    },
     onClose: function() {
         clearInterval(myInterval);
     }
