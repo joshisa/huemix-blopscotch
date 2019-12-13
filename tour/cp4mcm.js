@@ -353,7 +353,9 @@ var init = function() {
 
     hopscotch.registerHelper("openSideMenu", function() {
         //keep console.log("registerHelper invoked ...");
-        document.querySelector('.hamburger-box').click();
+        if (!document.querySelector('#left-nav')) {
+          document.querySelector('.hamburger-box').click();
+        }
         //var checkExist = setInterval(function() {
         //    var element = document.querySelectorAll('#overview')[0];
         //    if (element) {
