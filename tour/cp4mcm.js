@@ -71,6 +71,8 @@ var nextOnCallback = function(callback) {
 };
 */
 
+var autoplay;
+var globalCadence = 7000;
 var tour = {
     id: 'hello-cloudpak-for-multicloud-management',
     steps: [{
@@ -81,7 +83,7 @@ var tour = {
             arrowOffset: 260,
             xOffset: -280,
             yOffset: 10,
-            delay: 500,
+            delay: 0,
             onNext: ["openUserMenu"],
             onClose: function() {
                 setCookie("toured", "toured");
@@ -95,6 +97,7 @@ var tour = {
             placement: 'left',
             arrowOffset: 0,
             yOffset: 0,
+            delay: 0,
             onNext: ["openUserMenu"],
             onPrev: ["openUserMenu"],
             onClose: function() {
@@ -109,6 +112,7 @@ var tour = {
             placement: 'left',
             arrowOffset: 0,
             yOffset: 0,
+            delay: 0,
             onNext: ["openUserMenu"],
             onPrev: ["openUserMenu"],
             onClose: function() {
@@ -123,6 +127,7 @@ var tour = {
             placement: 'left',
             arrowOffset: 0,
             yOffset: 0,
+            delay: 0,
             onNext: ["openUserMenu"],
             onPrev: ["openUserMenu"],
             onClose: function() {
@@ -137,12 +142,103 @@ var tour = {
             placement: 'left',
             arrowOffset: 0,
             yOffset: 0,
-            onNext: ["closeUserMenu"],
+            delay: 0,
+            onNext: ["closeUserMenu","openInfoMenu"],
             onPrev: ["openUserMenu"],
             onClose: function() {
                 setCookie("toured", "toured");
             },
             onError:["openUserMenu"],
+        },
+        {
+            target: 'icp-about',
+            title: 'About Dialog',
+            content: 'Quick reference on version, copyright and licensing information.',
+            placement: 'left',
+            arrowOffset: 0,
+            yOffset: 0,
+            delay: 0,
+            onNext: ["openInfoMenu"],
+            onPrev: ["openInfoMenu"],
+            onClose: function() {
+                setCookie("toured", "toured");
+            },
+            onError:["openInfoMenu"],
+        },
+        {
+            target: 'icp-kc',
+            title: 'Knowledge Center',
+            content: 'Obtain valuable information from the Knowledge Center. Things like Release notes explaining what\'s new and known issues.  Getting started, installation, deep dive explanations on product features and overviews covering Multicloud Manager, Cloud Application Management, Event Management, Infrastructure Management and much, much more!',
+            placement: 'left',
+            arrowOffset: 0,
+            yOffset: 0,
+            delay: 0,
+            onNext: ["openInfoMenu"],
+            onPrev: ["openInfoMenu"],
+            onClose: function() {
+                setCookie("toured", "toured");
+            },
+            onError:["openInfoMenu"],
+        },
+        {
+            target: 'icp-welcome',
+            title: 'Welcome - Getting Started',
+            content: 'Convenient shortcut link to the \"Getting Started\" welcome page',
+            placement: 'left',
+            arrowOffset: 0,
+            yOffset: 0,
+            delay: 0,
+            onNext: ["openInfoMenu"],
+            onPrev: ["openInfoMenu"],
+            onClose: function() {
+                setCookie("toured", "toured");
+            },
+            onError:["openInfoMenu"],
+        },
+        {
+            target: 'icp-support',
+            title: 'Support',
+            content: 'We are here to help. While we work hard to make things simple and clear, we know that gremlins can happen at any time.  Share your questions. Share your comments. Our support team is ready.',
+            placement: 'left',
+            arrowOffset: 0,
+            yOffset: 0,
+            delay: 0,
+            onNext: ["closeInfoMenu","openTermMenu"],
+            onPrev: ["openInfoMenu"],
+            onClose: function() {
+                setCookie("toured", "toured");
+            },
+            onError:["openInfoMenu"],
+        },
+        {
+            target: 'icp-web-terminal',
+            title: 'Browser based web terminal',
+            content: 'For those times when a situation needs a power-user move - drop into command-line without the hassle of configuration or setup locally. Sweet!',
+            placement: 'left',
+            arrowOffset: 0,
+            yOffset: 0,
+            delay: 0,
+            onNext: ["openTermMenu"],
+            onPrev: ["openTermMenu"],
+            onClose: function() {
+                setCookie("toured", "toured");
+            },
+            onError:["openTermMenu"],
+        },
+        {
+            target: 'icp-visual-web-terminal',
+            title: 'KUI',
+            content: 'Taking the CLI experience to a whole new level. Experience IBM Research technology first-hand! A hybrid CLI experience blending visual and terminal experiences for your Hybrid Cloud world.',
+            placement: 'left',
+            arrowOffset: 0,
+            yOffset: 0,
+            delay: 0,
+            onNext: ["closeTermMenu"],
+            onPrev: ["openTermMenu"],
+            onClose: function() {
+                setCookie("toured", "toured");
+            },
+            onError:["openTermMenu"],
         },
         {
             target: document.querySelectorAll('.hamburger-box')[0],
@@ -151,7 +247,8 @@ var tour = {
             placement: 'right',
             arrowOffset: 0,
             yOffset: -20,
-            onPrev: ["openUserMenu"],
+            delay: 0,
+            onPrev: ["openTermMenu"],
             onNext: ["openSideMenu"],
             onClose: function() {
                 setCookie("toured", "toured");
@@ -165,7 +262,7 @@ var tour = {
             placement: 'right',
             arrowOffset: 0,
             yOffset: -10,
-            delay: 2000,
+            delay: 0,
             onNext: ["openSideMenu"],
             onPrev: ["openSideMenu"],
             onClose: function() {
@@ -180,7 +277,7 @@ var tour = {
             placement: 'right',
             arrowOffset: 0,
             yOffset: -10,
-            delay: 2000,
+            delay: 0,
             onNext: ["openSideMenu"],
             onPrev: ["openSideMenu"],
             onClose: function() {
@@ -195,7 +292,7 @@ var tour = {
             placement: 'right',
             arrowOffset: 0,
             yOffset: -10,
-            delay: 2000,
+            delay: 0,
             onNext: ["openSideMenu"],
             onPrev: ["openSideMenu"],
             onClose: function() {
@@ -210,7 +307,7 @@ var tour = {
             placement: 'right',
             arrowOffset: 0,
             yOffset: -10,
-            delay: 2000,
+            delay: 0,
             onNext: ["openSideMenu"],
             onPrev: ["openSideMenu"],
             onClose: function() {
@@ -225,7 +322,7 @@ var tour = {
             placement: 'right',
             arrowOffset: 0,
             yOffset: -10,
-            delay: 2000,
+            delay: 0,
             onNext: ["openSideMenu"],
             onPrev: ["openSideMenu"],
             onClose: function() {
@@ -240,7 +337,7 @@ var tour = {
             placement: 'right',
             arrowOffset: 0,
             yOffset: -10,
-            delay: 2000,
+            delay: 0,
             onNext: ["openSideMenu"],
             onPrev: ["openSideMenu"],
             onClose: function() {
@@ -255,7 +352,7 @@ var tour = {
             placement: 'right',
             arrowOffset: 0,
             yOffset: -10,
-            delay: 2000,
+            delay: 0,
             onNext: ["openSideMenu"],
             onPrev: ["openSideMenu"],
             onClose: function() {
@@ -270,7 +367,7 @@ var tour = {
             placement: 'right',
             arrowOffset: 0,
             yOffset: -10,
-            delay: 2000,
+            delay: 0,
             onNext: ["openSideMenu"],
             onPrev: ["openSideMenu"],
             onClose: function() {
@@ -285,7 +382,7 @@ var tour = {
             placement: 'right',
             arrowOffset: 0,
             yOffset: -10,
-            delay: 2000,
+            delay: 0,
             multipage: true,
             onNext: function() {
               window.location.href ="/multicloud/overview";
@@ -315,10 +412,11 @@ var tour = {
     scrollTopMargin: 100,
     onEnd: function() {
         setCookie("toured", "toured");
+        clearInterval(autoplay);
     }
-    //onClose: function() {
-    //    setCookie("toured", "toured");
-    //}
+    onClose: function() {
+        clearInterval(myInterval);
+    }
 };
 
 /* ========== */
@@ -340,15 +438,32 @@ var init = function() {
 
     hopscotch.registerHelper("openUserMenu", function() {
         console.log("openUserMenu invoked ...");
-        //var event = document.createEvent("SVGEvents");
-        //event.initEvent("click",true,true);
-        //document.querySelector('#user-dropdown').dispatchEvent(event);
         document.querySelector('#icp-user-dropdown').firstElementChild.classList.add("is-open");
     });
 
     hopscotch.registerHelper("closeUserMenu", function() {
         console.log("closeUserMenu invoked ...");
         document.querySelector('#icp-user-dropdown').firstElementChild.classList.remove("is-open");
+    });
+
+    hopscotch.registerHelper("openInfoMenu", function() {
+        console.log("openInfoMenu invoked ...");
+        document.querySelector('#icp-info-dropdown').firstElementChild.classList.add("is-open");
+    });
+
+    hopscotch.registerHelper("closeInfoMenu", function() {
+        console.log("closeInfoMenu invoked ...");
+        document.querySelector('#icp-info-dropdown').firstElementChild.classList.remove("is-open");
+    });
+
+    hopscotch.registerHelper("openTermMenu", function() {
+        console.log("openTermMenu invoked ...");
+        document.querySelector('#icp-terminal-dropdown').firstElementChild.classList.add("is-open");
+    });
+
+    hopscotch.registerHelper("closeTermMenu", function() {
+        console.log("closeTermMenu invoked ...");
+        document.querySelector('#icp-terminal-dropdown').firstElementChild.classList.remove("is-open");
     });
 
     hopscotch.registerHelper("openSideMenu", function() {
@@ -374,7 +489,7 @@ var init = function() {
     if (state && state.indexOf('hello-cloudpak-for-multicloud-management') === 0) {
         // Already started the tour at some point!
         hopscotch.startTour(tour);
-        setInterval(function () { hopscotch.nextStep() }, 7000);
+        autoplay = setInterval(function () { hopscotch.nextStep() }, globalCadence);
     } else {
         // Looking at the page for the first(?) time.
         if (!getCookie("toured")) {
@@ -399,7 +514,7 @@ var init = function() {
             mgr.removeAllCallouts();
             deleteCookie('toured');
             hopscotch.startTour(tour);
-            setInterval(function () { hopscotch.nextStep() }, 7000);
+            autoplay = setInterval(function () { hopscotch.nextStep() }, globalCadence);
         }
     });
 
