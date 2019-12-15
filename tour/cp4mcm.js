@@ -147,7 +147,7 @@ var tour = {
             arrowOffset: 0,
             yOffset: 0,
             delay: 0,
-            onNext: ["closeUserMenu","openInfoMenu"],
+            onNext: [["closeUserMenu"], ["openInfoMenu"]],
             onPrev: ["openUserMenu"],
             onClose: function() {
                 setCookie("toured", "toured");
@@ -211,7 +211,7 @@ var tour = {
             arrowOffset: 0,
             yOffset: 0,
             delay: 0,
-            onNext: ["closeInfoMenu","openTermMenu"],
+            onNext: [["closeInfoMenu"], ["openTermMenu"]],
             onPrev: ["openInfoMenu"],
             onClose: function() {
                 setCookie("toured", "toured");
