@@ -72,7 +72,7 @@ var nextOnCallback = function(callback) {
 */
 
 var autoplay;
-var globalCadence = 7000;
+var globalCadence = 8000;
 var tour = {
     id: 'hello-cloudpak-for-multicloud-management',
     steps: [{
@@ -87,6 +87,7 @@ var tour = {
             onNext: ["openUserMenu"],
             onClose: function() {
                 setCookie("toured", "toured");
+                clearInterval(autoplay);
             },
             onError:["openUserMenu"],
         },
@@ -102,6 +103,7 @@ var tour = {
             onPrev: ["openUserMenu"],
             onClose: function() {
                 setCookie("toured", "toured");
+                clearInterval(autoplay);
             },
             onError:["openUserMenu"],
         },
@@ -117,6 +119,7 @@ var tour = {
             onPrev: ["openUserMenu"],
             onClose: function() {
                 setCookie("toured", "toured");
+                clearInterval(autoplay);
             },
             onError:["openUserMenu"],
         },
@@ -132,6 +135,7 @@ var tour = {
             onPrev: ["openUserMenu"],
             onClose: function() {
                 setCookie("toured", "toured");
+                clearInterval(autoplay);
             },
             onError:["openUserMenu"],
         },
@@ -147,6 +151,7 @@ var tour = {
             onPrev: ["openUserMenu"],
             onClose: function() {
                 setCookie("toured", "toured");
+                clearInterval(autoplay);
             },
             onError:["openUserMenu"],
         },
@@ -157,11 +162,12 @@ var tour = {
             placement: 'left',
             arrowOffset: 0,
             yOffset: 0,
-            delay: 0,
+            delay: 1000,
             onNext: ["openInfoMenu"],
             onPrev: ["openInfoMenu"],
             onClose: function() {
                 setCookie("toured", "toured");
+                clearInterval(autoplay);
             },
             onError:["openInfoMenu"],
         },
@@ -177,6 +183,7 @@ var tour = {
             onPrev: ["openInfoMenu"],
             onClose: function() {
                 setCookie("toured", "toured");
+                clearInterval(autoplay);
             },
             onError:["openInfoMenu"],
         },
@@ -192,6 +199,7 @@ var tour = {
             onPrev: ["openInfoMenu"],
             onClose: function() {
                 setCookie("toured", "toured");
+                clearInterval(autoplay);
             },
             onError:["openInfoMenu"],
         },
@@ -207,6 +215,7 @@ var tour = {
             onPrev: ["openInfoMenu"],
             onClose: function() {
                 setCookie("toured", "toured");
+                clearInterval(autoplay);
             },
             onError:["openInfoMenu"],
         },
@@ -217,11 +226,12 @@ var tour = {
             placement: 'left',
             arrowOffset: 0,
             yOffset: 0,
-            delay: 0,
+            delay: 1000,
             onNext: ["openTermMenu"],
             onPrev: ["openTermMenu"],
             onClose: function() {
                 setCookie("toured", "toured");
+                clearInterval(autoplay);
             },
             onError:["openTermMenu"],
         },
@@ -237,6 +247,7 @@ var tour = {
             onPrev: ["openTermMenu"],
             onClose: function() {
                 setCookie("toured", "toured");
+                clearInterval(autoplay);
             },
             onError:["openTermMenu"],
         },
@@ -252,6 +263,7 @@ var tour = {
             onNext: ["openSideMenu"],
             onClose: function() {
                 setCookie("toured", "toured");
+                clearInterval(autoplay);
             },
             onError:["openSideMenu"],
         },
@@ -262,11 +274,12 @@ var tour = {
             placement: 'right',
             arrowOffset: 0,
             yOffset: -10,
-            delay: 0,
+            delay: 700,
             onNext: ["openSideMenu"],
             onPrev: ["openSideMenu"],
             onClose: function() {
                 setCookie("toured", "toured");
+                clearInterval(autoplay);
             },
             onError:["openSideMenu"],
         },
@@ -282,6 +295,7 @@ var tour = {
             onPrev: ["openSideMenu"],
             onClose: function() {
                 setCookie("toured", "toured");
+                clearInterval(autoplay);
             },
             onError:["openSideMenu"],
         },
@@ -297,6 +311,7 @@ var tour = {
             onPrev: ["openSideMenu"],
             onClose: function() {
                 setCookie("toured", "toured");
+                clearInterval(autoplay);
             },
             onError:["openSideMenu"],
         },
@@ -312,6 +327,7 @@ var tour = {
             onPrev: ["openSideMenu"],
             onClose: function() {
                 setCookie("toured", "toured");
+                clearInterval(autoplay);
             },
             onError:["openSideMenu"],
         },
@@ -327,6 +343,7 @@ var tour = {
             onPrev: ["openSideMenu"],
             onClose: function() {
                 setCookie("toured", "toured");
+                clearInterval(autoplay);
             },
             onError:["openSideMenu"],
         },
@@ -342,6 +359,7 @@ var tour = {
             onPrev: ["openSideMenu"],
             onClose: function() {
                 setCookie("toured", "toured");
+                clearInterval(autoplay);
             },
             onError:["openSideMenu"],
         },
@@ -357,6 +375,7 @@ var tour = {
             onPrev: ["openSideMenu"],
             onClose: function() {
                 setCookie("toured", "toured");
+                clearInterval(autoplay);
             },
             onError:["openSideMenu"],
         },
@@ -372,6 +391,7 @@ var tour = {
             onPrev: ["openSideMenu"],
             onClose: function() {
                 setCookie("toured", "toured");
+                clearInterval(autoplay);
             },
             onError:["openSideMenu"],
         },
@@ -390,6 +410,7 @@ var tour = {
             onPrev: ["openSideMenu"],
             onClose: function() {
                 setCookie("toured", "toured");
+                clearInterval(autoplay);
             },
             onError: ["openSideMenu"],
         },
@@ -405,6 +426,7 @@ var tour = {
             onPrev: ["openSideMenu"],
             onClose: function() {
                 setCookie("toured", "toured");
+                clearInterval(autoplay);
             },
         },
     ],
@@ -415,7 +437,7 @@ var tour = {
         clearInterval(autoplay);
     },
     onClose: function() {
-        clearInterval(myInterval);
+        clearInterval(autoplay);
     }
 };
 
