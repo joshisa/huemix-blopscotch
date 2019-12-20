@@ -27,14 +27,14 @@ var cp4mcm = /^https?:\/\/icp-console(.*?)/;
   document.body.appendChild(t);
 
   chrome.storage.sync.get(['autoPlayEnabled','playBackDelay'], function(items) {
-    autoPlayEnabledValue = items.autoPlayEnabled;
-    playBackDelayValue = items.playBackDelay;
+    autoPlayEnabledValue = items.autoPlayEnabled || "false";
+    playBackDelayValue = items.playBackDelay || "8";
     //Trying to create this hidden div to share extension options with tour script
     //<div id="hopscotchOptions" data-autoplayenabled="true" data-playbackdelay="8"></div>
     var h = document.createElement('div');
     h.id = 'hopscotchOptions';
-    h["data-autoplayenabled"] = autoPlayEnabledValue;
-    h["data-playbackdelay"] = playBackDelayValue;
+    h.setAttribute("data-autoplayenabled", autoPlayEnabledValue);
+    h.setAttribute("data-playbackdelay", playBackDelayValue);
     document.body.appendChild(h);
     console.log("Is autoplay enabled? " + autoPlayEnabledValue);
     console.log("Global Playback Cadence: " + playBackDelayValue);
