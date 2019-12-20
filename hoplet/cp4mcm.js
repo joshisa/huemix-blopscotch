@@ -6,7 +6,7 @@ if (cp4mcm.test(location.href)) {
   // <li id="blah"><div id="startTourBtn" style="position:relative;display:inline-block;padding-right:50px;" class="nav-text-button"><a class="button primary" style="width:100%;" href="#">▶ Tour</a></div></li>
 	var create_resource_item = document.getElementById("icp-create-resource");
   var c = document.createElement('li');
-  c.setAttribute('id', 'itemHolder');
+	c.setAttribute('id', 'itemHolder');
 	var b = document.createElement('div');
 	b.setAttribute('id', 'startTourBtn');
 	b.setAttribute('style', 'position:relative;display:inline-block;padding-right:50px;');
@@ -17,12 +17,13 @@ if (cp4mcm.test(location.href)) {
 	var t = document.createTextNode("▶  Tour");
 	a.appendChild(t);
 	b.appendChild(a);
-  c.appendChild(b);
+	c.appendChild(b);
 	create_resource_item.parentNode.insertBefore(c,create_resource_item);
 	console.log(prefix + "Tour Button injected ...");
-  console.log(prefix + "Happy Touring from the IBM CP4MCM Team!");
+	console.log(prefix + "Happy Touring from the IBM CP4MCM Team!");
 	
 	var t = document.createElement ('script');
 	t.src = "https://raw.githack.com/joshisa/huemix-blopscotch/master/tour/cp4mcm.js";
 	document.body.appendChild (t);
+  console.log(chrome.storage);
 }
