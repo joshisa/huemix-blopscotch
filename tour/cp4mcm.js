@@ -513,6 +513,8 @@ var init = function() {
     if (state && state.indexOf('hello-cloudpak-for-multicloud-management') === 0) {
         // Already started the tour at some point!
         hopscotch.startTour(tour);
+        autoPlayEnabled = hopscotchOptions.dataset.autoplayenabled;
+        globalCadence = (parseInt(hopscotchOptions.dataset.playbackdelay)*1000);
         if (String(autoPlayEnabled) == "true") {
           autoplay = setInterval(function () { hopscotch.nextStep() }, globalCadence);
         }
@@ -540,6 +542,8 @@ var init = function() {
             mgr.removeAllCallouts();
             deleteCookie('toured');
             hopscotch.startTour(tour);
+            autoPlayEnabled = hopscotchOptions.dataset.autoplayenabled;
+            globalCadence = (parseInt(hopscotchOptions.dataset.playbackdelay)*1000);
             if (String(autoPlayEnabled) == "true") {
               autoplay = setInterval(function () { hopscotch.nextStep() }, globalCadence);
             }
