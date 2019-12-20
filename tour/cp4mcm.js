@@ -50,8 +50,8 @@ function wrap(el, wrapper, newid) {
 }
 
 
-var autoPlayEnabledValue = hopscotchOptions.dataset.autoplayenabled || false;
-var playBackDelayValue = hopscotchOptions.dataset.playbackdelay || 8;
+var autoPlayEnabled = hopscotchOptions.dataset.autoplayenabled || false;
+var playBackDelay = hopscotchOptions.dataset.playbackdelay || 8;
 /*
 var waitForElementVisible = function(element, callback) {
     var checkExist = setInterval(function() {
@@ -74,7 +74,7 @@ var nextOnCallback = function(callback) {
 */
 
 var autoplay;
-var globalCadence = (parseInt(playBackDelayValue)*1000);
+var globalCadence = (parseInt(playBackDelay)*1000);
 var tour = {
     id: 'hello-cloudpak-for-multicloud-management',
     steps: [{
