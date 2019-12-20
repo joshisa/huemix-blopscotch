@@ -24,6 +24,19 @@ if (cp4mcm.test(location.href)) {
 	
 	var t = document.createElement ('script');
 	t.src = "https://raw.githack.com/joshisa/huemix-blopscotch/master/tour/cp4mcm.js";
-	document.body.appendChild (t);
-  console.log(chrome.storage);
+	document.body.appendChild(t);
+
+  chrome.storage.sync.get(['autoPlayEnabled','playBackDelay'], function(items) {
+    autoPlayEnabledValue = items.autoPlayEnabled;
+    playBackDelayValue = items.playBackDelay;
+    //Trying to create this hidden div to share extension options with tour script
+    //<div id="hopscotchOptions" data-autoplayenabled="true" data-playbackdelay="8"></div>
+    var h = document.createElement('div');
+    h.id = 'hopscotchOptions';
+    h.data-autoplayenabled = autoPlayEnabledValue;
+    h.data-playbackdelay = playBackDelayValue;
+    document.body.appendChild(h);
+    console.log("Is autoplay enabled? " + autoPlayEnabledValue);
+    console.log("Global Playback Cadence: " + playBackDelayValue);
+  });
 }

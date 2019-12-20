@@ -50,18 +50,8 @@ function wrap(el, wrapper, newid) {
 }
 
 
-var autoPlayEnabledValue = true;
-var playBackDelayValue = 7;
-
-chrome.storage.sync.get(['autoPlayEnabled','playBackDelay'], function(items) {
-  autoPlayEnabledValue = items.autoPlayEnabled;
-  playBackDelayValue = items.playBackDelay;
-  console.log("Is autoplay enabled? " + autoPlayEnabledValue);
-  console.log("Global Playback Cadence: " + playBackDelayValue);
-});
-
-
-
+var autoPlayEnabledValue = hopscotchOptions.dataset.autoplayenabled || false;
+var playBackDelayValue = hopscotchOptions.dataset.playbackdelay || 8;
 /*
 var waitForElementVisible = function(element, callback) {
     var checkExist = setInterval(function() {
@@ -84,7 +74,7 @@ var nextOnCallback = function(callback) {
 */
 
 var autoplay;
-var globalCadence = (playBackDelayValue*1000);
+var globalCadence = (parseInt(playBackDelayValue)*1000);
 var tour = {
     id: 'hello-cloudpak-for-multicloud-management',
     steps: [{
@@ -523,7 +513,7 @@ var init = function() {
     if (state && state.indexOf('hello-cloudpak-for-multicloud-management') === 0) {
         // Already started the tour at some point!
         hopscotch.startTour(tour);
-        if (autoPlayEnabled) { 
+        if (String(autoPlayEnabled) == "true") {
           autoplay = setInterval(function () { hopscotch.nextStep() }, globalCadence);
         }
     } else {
@@ -550,7 +540,7 @@ var init = function() {
             mgr.removeAllCallouts();
             deleteCookie('toured');
             hopscotch.startTour(tour);
-            if (autoPlayEnabled) { 
+            if (String(autoPlayEnabled) == "true") {
               autoplay = setInterval(function () { hopscotch.nextStep() }, globalCadence);
             }
         }
