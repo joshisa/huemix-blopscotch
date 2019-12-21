@@ -102,7 +102,7 @@ var tour = {
             yOffset: 0,
             delay: 0,
             onNext: ["openUserMenu"],
-            onPrev: ["openUserMenu"],
+            onPrev: ["closeUserMenu"],
             onClose: function() {
                 setCookie("toured", "toured");
                 clearInterval(autoplay);
