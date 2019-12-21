@@ -346,8 +346,8 @@ var tour = {
     ],
     showPrevButton: true,
     scrollTopMargin: 100,
-    onEnd: [["setCookie"], ["clearTimer",autoplay]],
-    onClose: [["setCookie"], ["closeUserMenu"], ["closeInfoMenu"], ["closeTermMenu"], ["clearTimer", autoplay]],
+    onEnd: [["setCookie"], ["clearTimer"]],
+    onClose: [["setCookie"], ["closeUserMenu"], ["closeInfoMenu"], ["closeTermMenu"], ["clearTimer"]],
 };
 
 /* ========== */
@@ -374,8 +374,9 @@ var init = function() {
         document.cookie = 'toured=toured;path=/' + ';expires=' + expires.toUTCString();
     });
 
-    hopscotch.registerHelper("clearTimer", function(autoplay) {
+    hopscotch.registerHelper("clearTimer", function() {
         console.log("clearTimer invoked ...");
+        console.log(autoplay);
         clearInterval(autoplay);
     });
 
