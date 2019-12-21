@@ -105,6 +105,7 @@ var tour = {
             onPrev: ["closeUserMenu"],
             onClose: function() {
                 setCookie("toured", "toured");
+                document.querySelector('#icp-user-dropdown').firstElementChild.classList.remove("is-open");
                 clearInterval(autoplay);
             },
             onError:["openUserMenu"],
@@ -121,6 +122,7 @@ var tour = {
             onPrev: ["openUserMenu"],
             onClose: function() {
                 setCookie("toured", "toured");
+                document.querySelector('#icp-user-dropdown').firstElementChild.classList.remove("is-open");
                 clearInterval(autoplay);
             },
             onError:["openUserMenu"],
@@ -137,6 +139,7 @@ var tour = {
             onPrev: ["openUserMenu"],
             onClose: function() {
                 setCookie("toured", "toured");
+                document.querySelector('#icp-user-dropdown').firstElementChild.classList.remove("is-open");
                 clearInterval(autoplay);
             },
             onError:["openUserMenu"],
@@ -153,6 +156,7 @@ var tour = {
             onPrev: ["openUserMenu"],
             onClose: function() {
                 setCookie("toured", "toured");
+                document.querySelector('#icp-user-dropdown').firstElementChild.classList.remove("is-open");
                 clearInterval(autoplay);
             },
             onError:["openUserMenu"],
@@ -169,6 +173,7 @@ var tour = {
             onPrev: [["closeInfoMenu"], ["openUserMenu"]],
             onClose: function() {
                 setCookie("toured", "toured");
+                document.querySelector('#icp-info-dropdown').firstElementChild.classList.remove("is-open");
                 clearInterval(autoplay);
             },
             onError:["openInfoMenu"],
@@ -185,6 +190,7 @@ var tour = {
             onPrev: ["openInfoMenu"],
             onClose: function() {
                 setCookie("toured", "toured");
+                document.querySelector('#icp-info-dropdown').firstElementChild.classList.remove("is-open");
                 clearInterval(autoplay);
             },
             onError:["openInfoMenu"],
@@ -201,6 +207,7 @@ var tour = {
             onPrev: ["openInfoMenu"],
             onClose: function() {
                 setCookie("toured", "toured");
+                document.querySelector('#icp-info-dropdown').firstElementChild.classList.remove("is-open");
                 clearInterval(autoplay);
             },
             onError:["openInfoMenu"],
@@ -217,6 +224,7 @@ var tour = {
             onPrev: ["openInfoMenu"],
             onClose: function() {
                 setCookie("toured", "toured");
+                document.querySelector('#icp-info-dropdown').firstElementChild.classList.remove("is-open");
                 clearInterval(autoplay);
             },
             onError:["openInfoMenu"],
@@ -233,6 +241,7 @@ var tour = {
             onPrev: [["closeTermMenu"], ["openInfoMenu"]],
             onClose: function() {
                 setCookie("toured", "toured");
+                document.querySelector('#icp-terminal-dropdown').firstElementChild.classList.remove("is-open");
                 clearInterval(autoplay);
             },
             onError:["openTermMenu"],
@@ -249,6 +258,7 @@ var tour = {
             onPrev: ["openTermMenu"],
             onClose: function() {
                 setCookie("toured", "toured");
+                document.querySelector('#icp-terminal-dropdown').firstElementChild.classList.remove("is-open");
                 clearInterval(autoplay);
             },
             onError:["openTermMenu"],
@@ -292,7 +302,7 @@ var tour = {
             placement: 'right',
             arrowOffset: 0,
             yOffset: -10,
-            delay: 0,
+            delay: 700,
             onNext: ["openSideMenu"],
             onPrev: ["openSideMenu"],
             onClose: function() {
@@ -308,7 +318,7 @@ var tour = {
             placement: 'right',
             arrowOffset: 0,
             yOffset: -10,
-            delay: 0,
+            delay: 700,
             onNext: ["openSideMenu"],
             onPrev: ["openSideMenu"],
             onClose: function() {
@@ -324,7 +334,7 @@ var tour = {
             placement: 'right',
             arrowOffset: 0,
             yOffset: -10,
-            delay: 0,
+            delay: 700,
             onNext: ["openSideMenu"],
             onPrev: ["openSideMenu"],
             onClose: function() {
@@ -340,7 +350,7 @@ var tour = {
             placement: 'right',
             arrowOffset: 0,
             yOffset: -10,
-            delay: 0,
+            delay: 700,
             onNext: ["openSideMenu"],
             onPrev: ["openSideMenu"],
             onClose: function() {
@@ -356,7 +366,7 @@ var tour = {
             placement: 'right',
             arrowOffset: 0,
             yOffset: -10,
-            delay: 0,
+            delay: 700,
             onNext: ["openSideMenu"],
             onPrev: ["openSideMenu"],
             onClose: function() {
@@ -372,7 +382,7 @@ var tour = {
             placement: 'right',
             arrowOffset: 0,
             yOffset: -10,
-            delay: 0,
+            delay: 700,
             onNext: ["openSideMenu"],
             onPrev: ["openSideMenu"],
             onClose: function() {
@@ -388,7 +398,7 @@ var tour = {
             placement: 'right',
             arrowOffset: 0,
             yOffset: -10,
-            delay: 0,
+            delay: 700,
             onNext: ["openSideMenu"],
             onPrev: ["openSideMenu"],
             onClose: function() {
@@ -404,7 +414,7 @@ var tour = {
             placement: 'right',
             arrowOffset: 0,
             yOffset: -10,
-            delay: 0,
+            delay: 700,
             multipage: true,
             onNext: function() {
               window.location.href ="/multicloud/overview";
