@@ -166,7 +166,7 @@ var tour = {
             yOffset: 0,
             delay: 1000,
             onNext: ["openInfoMenu"],
-            onPrev: ["openInfoMenu"],
+            onPrev: [["closeInfoMenu"], ["openUserMenu"]],
             onClose: function() {
                 setCookie("toured", "toured");
                 clearInterval(autoplay);
@@ -230,7 +230,7 @@ var tour = {
             yOffset: 0,
             delay: 1000,
             onNext: ["openTermMenu"],
-            onPrev: ["openTermMenu"],
+            onPrev: [["closeTermMenu"], ["openInfoMenu"]],
             onClose: function() {
                 setCookie("toured", "toured");
                 clearInterval(autoplay);
@@ -517,6 +517,8 @@ var init = function() {
         globalCadence = (parseInt(hopscotchOptions.dataset.playbackdelay)*1000);
         if (String(autoPlayEnabled) == "true") {
           autoplay = setInterval(function () { hopscotch.nextStep() }, globalCadence);
+        } else {
+          clearInterval(autoplay);
         }
     } else {
         // Looking at the page for the first(?) time.
@@ -546,6 +548,8 @@ var init = function() {
             globalCadence = (parseInt(hopscotchOptions.dataset.playbackdelay)*1000);
             if (String(autoPlayEnabled) == "true") {
               autoplay = setInterval(function () { hopscotch.nextStep() }, globalCadence);
+            } else {
+              clearInterval(autoplay);
             }
         }
     });
