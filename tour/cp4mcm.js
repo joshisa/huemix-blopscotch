@@ -87,10 +87,7 @@ var tour = {
             yOffset: 10,
             delay: 0,
             onNext: ["openUserMenu"],
-            onClose: function() {
-                setCookie("toured", "toured");
-                clearInterval(autoplay);
-            },
+            onClose: [["setCookie"], ["clearTimer",autoplay]],
             onError:["openUserMenu"],
         },
         {
@@ -103,11 +100,7 @@ var tour = {
             delay: 0,
             onNext: ["openUserMenu"],
             onPrev: ["closeUserMenu"],
-            onClose: function() {
-                setCookie("toured", "toured");
-                document.querySelector('#icp-user-dropdown').firstElementChild.classList.remove("is-open");
-                clearInterval(autoplay);
-            },
+            onClose: [["setCookie"], ["closeUserMenu"], ["clearTimer",autoplay]],
             onError:["openUserMenu"],
         },
         {
@@ -469,6 +462,18 @@ var init = function() {
         calloutId = 'startTourCallout',
         mgr = hopscotch.getCalloutManager(),
         state = hopscotch.getState();
+
+    hopscotch.registerHelper("setCookie", function() {
+        console.log("setCookie invoked ...");
+        var expires = new Date();
+        expires.setTime(expires.getTime() + (1 * 24 * 60 * 60 * 1000));
+        document.cookie = 'toured=toured;path=/' + ';expires=' + expires.toUTCString();
+    });
+
+    hopscotch.registerHelper("clearTimer", function(autoplay) {
+        console.log("clearTimer invoked ...");
+        clearInterval(autoplay);
+    });
 
     hopscotch.registerHelper("openUserMenu", function() {
         console.log("openUserMenu invoked ...");
