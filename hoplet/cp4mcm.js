@@ -43,12 +43,21 @@ var cp4mcm = /^https?:\/\/icp-console(.*?)/;
   chrome.storage.onChanged.addListener(function(changes, namespace) {
     for (var key in changes) {
       var storageChange = changes[key];
+      var changePatrol = document.getElementById("hopscotchOptions");
+      if (key === "autoPlayEnabled") {
+        changePatrol.setAttribute("data-autoplayenabled", storageChange.newValue);
+      } else if (key === "playBackDelay") {
+        changePatrol.setAttribute("data-playbackdelay", storageChange.newValue);
+      }
+      console.info('Hopscotch for CloudPaks Option "%s" has now been set to "%s"', key, storageChange.newValue);
+      /*
       console.log('Storage key "%s" in namespace "%s" changed. ' +
                   'Old value was "%s", new value is "%s".',
                   key,
                   namespace,
                   storageChange.oldValue,
                   storageChange.newValue);
+      */
     }
   });
 }
