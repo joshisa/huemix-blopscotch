@@ -23,9 +23,9 @@ function ping() {
             */
             proxyXHR.get('https://api.github.com/repos/joshisa/huemix-blopscotch/git/trees/master?recursive=1').onSuccess(function (data) {
                     var whitelist = [];
-                    for (i in myObj.tree) {
-                      if (myObj.tree[i].path.indexOf("hoplet/") != -1) {
-                        whitelist.push(myObj.tree[i].path.toString());
+                    for (i in data.tree) {
+                      if (data.tree[i].path.indexOf("hoplet/") != -1) {
+                        whitelist.push(data.tree[i].path.toString());
                       }
                     }
                     console.log(prefix + "Number of Hoplets defined : " + whitelist.length);
