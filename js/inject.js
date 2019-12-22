@@ -17,18 +17,28 @@ function ping() {
             console.log(prefix + "current page URL is: " + location.href);
             // https://api.github.com/repos/joshisa/huemix-blopscotch/git/trees/master?recursive=1
             // Array of registered hoplets
+            /*
             whitelist = ["hoplet/demo.js",
                         "hoplet/cp4mcm.js"];
-            console.log(prefix + "Number of Hoplets defined : " + whitelist.length);
-            var i = 0;
-            while (whitelist[i]) {
-                // https://raw.githack.com/joshisa/huemix-blopscotch/master/ + whitelist[i]
-                console.log(prefix + "Loading " + whitelist[i]);
-                proxyXHR.get('https://raw.githack.com/joshisa/huemix-blopscotch/master/' + whitelist[i]).onSuccess(function (data) {
-                    eval(data);
-                });
-                i++;
-            }
+            */
+            proxyXHR.get('https://api.github.com/repos/joshisa/huemix-blopscotch/git/trees/master?recursive=1').onSuccess(function (data) {
+                    var whitelist = [];
+                    for (i in myObj.tree) {
+                      if (myObj.tree[i].path.indexOf("hoplet/") != -1) {
+                        whitelist.push(myObj.tree[i].path.toString());
+                      }
+                    }
+                    console.log(prefix + "Number of Hoplets defined : " + whitelist.length);
+                    var i = 0;
+                    while (whitelist[i]) {
+                        // https://raw.githack.com/joshisa/huemix-blopscotch/master/ + whitelist[i]
+                        console.log(prefix + "Loading " + whitelist[i]);
+                        proxyXHR.get('https://raw.githack.com/joshisa/huemix-blopscotch/master/' + whitelist[i]).onSuccess(function (data) {
+                            eval(data);
+                        });
+                        i++;
+                    }
+            });
             console.log(prefix + "Hopscotch Dependencies successfully injected");
           }
         }, 10);
