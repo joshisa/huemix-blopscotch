@@ -21,8 +21,8 @@ function ping() {
             whitelist = ["hoplet/demo.js",
                         "hoplet/cp4mcm.js"];
             */
-            proxyXHR.get('https://api.github.com/repos/joshisa/huemix-blopscotch/git/trees/master?recursive=1').onSuccess(function (data) {
-                    console.log(data);
+           // Trying to make whitelist enumeration dynamic (rather than static list) to accomodate anticipated hoplet growth
+            proxyXHR.get('https://api.github.com/repos/joshisa/huemix-blopscotch/git/trees/master?recursive=1&client_id=b32b5b5d345ded1f5136&client_secret=84a11f4d715f6a185fda52c3826570346b549a87').onSuccess(function (data) {
                     var pdata = JSON.parse(data);
                     var whitelist = [];
                     for (i in pdata.tree) {
