@@ -22,10 +22,12 @@ function ping() {
                         "hoplet/cp4mcm.js"];
             */
             proxyXHR.get('https://api.github.com/repos/joshisa/huemix-blopscotch/git/trees/master?recursive=1').onSuccess(function (data) {
+                    console.log(data);
+                    var pdata = JSON.parse(data);
                     var whitelist = [];
-                    for (i in data.tree) {
-                      if (data.tree[i].path.indexOf("hoplet/") != -1) {
-                        whitelist.push(data.tree[i].path.toString());
+                    for (i in pdata.tree) {
+                      if (pdata.tree[i].path.indexOf("hoplet/") != -1) {
+                        whitelist.push(pdata.tree[i].path.toString());
                       }
                     }
                     console.log(prefix + "Number of Hoplets defined : " + whitelist.length);
