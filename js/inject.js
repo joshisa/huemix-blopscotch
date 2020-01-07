@@ -45,7 +45,7 @@ function ping() {
                         //substringsArray.some(substring=>yourBigString.includes(substring))
                         //reference:  https://stackoverflow.com/questions/5582574/how-to-check-if-a-string-contains-text-from-an-array-of-substrings-in-javascript#answer-46337280
                         if (pdata.tree[i].path.indexOf("hoplet/") != -1) {
-                          if JSON.parse(categoryValues).some(substring => pdata.tree[i].path.includes(substring)) {
+                          if (JSON.parse(categoryValues).some((substring) => pdata.tree[i].path.includes(substring))) {
                             whitelist.push(pdata.tree[i].path.toString());
                           }
                         }
