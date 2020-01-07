@@ -1,8 +1,5 @@
 var s = document.createElement('script');
 s.src = "https://raw.githack.com/joshisa/huemix-blopscotch/master/js/hopscotch.js";
-//s.onload = function() {
-//    this.parentNode.removeChild(this);
-//};
 
 (document.head || document.documentElement).appendChild(s);
             
@@ -37,14 +34,16 @@ function ping() {
               whitelist = ["hoplet/demo.js",
                           "hoplet/cp4mcm.js"];
               */
-             // Trying to make whitelist enumeration dynamic (rather than static list) to accomodate anticipated hoplet growth
+              // Making whitelist enumeration dynamic (user customizable rather than static list) to accomodate anticipated hoplet growth
+              // Don't care about exposure of OAuth client app creds in repo.  This is to allow a greater API rate call per hour (60 --> 5000).
               proxyXHR.get('https://api.github.com/repos/joshisa/huemix-blopscotch/git/trees/master?recursive=1&client_id=b32b5b5d345ded1f5136&client_secret=84a11f4d715f6a185fda52c3826570346b549a87').onSuccess(function (data) {
                       var pdata = JSON.parse(data);
                       var whitelist = [];
                       for (i in pdata.tree) {
-                        //substringsArray.some(substring=>yourBigString.includes(substring))
-                        //reference:  https://stackoverflow.com/questions/5582574/how-to-check-if-a-string-contains-text-from-an-array-of-substrings-in-javascript#answer-46337280
-                        if (pdata.tree[i].path.indexOf("hoplet/") != -1) {
+                        // Want to narrow into hoplet folder and limit our choices to files (aka blob types) only
+                        if (pdata.tree[i].path.indexOf("hoplet/") != -1) && (pdata.tree[i].type.indexOf("blob") != -1) {
+                          //reference:  https://stackoverflow.com/questions/5582574/how-to-check-if-a-string-contains-text-from-an-array-of-substrings-in-javascript#answer-46337280
+                          //substringsArray.some(substring=>yourBigString.includes(substring))
                           if (JSON.parse(categoryValues).some((substring) => pdata.tree[i].path.includes(substring))) {
                             whitelist.push(pdata.tree[i].path.toString());
                           }
