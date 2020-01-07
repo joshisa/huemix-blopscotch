@@ -41,7 +41,7 @@ function ping() {
                       var whitelist = [];
                       for (i in pdata.tree) {
                         // Want to narrow into hoplet folder and limit our choices to files (aka blob types) only
-                        if (pdata.tree[i].path.indexOf("hoplet/") != -1) && (pdata.tree[i].type.indexOf("blob") != -1) {
+                        if ((pdata.tree[i].path.indexOf("hoplet/") != -1) && (pdata.tree[i].type.indexOf("blob") != -1)) {
                           //reference:  https://stackoverflow.com/questions/5582574/how-to-check-if-a-string-contains-text-from-an-array-of-substrings-in-javascript#answer-46337280
                           //substringsArray.some(substring=>yourBigString.includes(substring))
                           if (JSON.parse(categoryValues).some((substring) => pdata.tree[i].path.includes(substring))) {
