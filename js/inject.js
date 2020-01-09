@@ -3,9 +3,16 @@ s.src = "https://raw.githack.com/joshisa/huemix-blopscotch/master/js/hopscotch.j
 
 (document.head || document.documentElement).appendChild(s);
             
+
+window.browser = (function () {
+  return window.msBrowser ||
+    window.browser ||
+    window.chrome;
+})();
+
 function ping() {
 
-  chrome.storage.sync.get(['autoPlayEnabled','playBackDelay','categories'], function(items) {
+  browser.storage.local.get(['autoPlayEnabled','playBackDelay','categories'], function(items) {
     autoPlayEnabledValue = items.autoPlayEnabled || "false";
     playBackDelayValue = items.playBackDelay || "8";
     categoryValues = items.categories || JSON.stringify(['default']);
@@ -20,9 +27,9 @@ function ping() {
     console.log("Is autoplay enabled? " + autoPlayEnabledValue);
     console.log("Global Playback Cadence: " + playBackDelayValue);
     JSON.parse(categoryValues).forEach(element => console.log("Hoplet Category: " + element + " is enabled."));
-    chrome.extension.sendMessage({}, function(response) {
-        if (chrome.runtime.lastError) {
-          //console.log("foo::" + chrome.runtime.lastError.message);
+    browser.runtime.sendMessage({}, function(response) {
+        if (browser.runtime.lastError) {
+          //console.log("foo::" + browser.runtime.lastError.message);
           var readyStateCheckInterval = setInterval(function() {
             if (document.readyState === "complete") {
               clearInterval(readyStateCheckInterval);
@@ -67,7 +74,7 @@ function ping() {
     });
   });
 
-  chrome.storage.onChanged.addListener(function(changes, namespace) {
+  browser.storage.onChanged.addListener(function(changes, namespace) {
     for (var key in changes) {
       var storageChange = changes[key];
       var changePatrol = document.getElementById("hopscotchOptions");
