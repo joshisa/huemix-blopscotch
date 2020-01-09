@@ -58,7 +58,7 @@ function ping() {
                   //console.log("NewResponse: " + this.responseText);
                   //console.log("Newxhr: " + this);
                   try {
-                    var pdata = JSON.parse(data);
+                    var pdata = JSON.parse(this.responseText);
                     var whitelist = [];
                     for (i in pdata.tree) {
                       // Want to narrow into hoplet folder and limit our choices to files (aka blob types) only
