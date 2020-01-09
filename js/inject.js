@@ -74,27 +74,9 @@ function ping() {
                     var i = 0;
                     while (whitelist[i]) {
                         console.log(prefix + "Loading " + whitelist[i]);
-                        var xhrOptions2 = {
-                          method: 'GET',
-                          url: 'https://raw.githack.com/joshisa/huemix-blopscotch/master/' + whitelist[i],
-                        };
-                        xhr.open(xhrOptions2.method || "GET", xhrOptions2.url, true);
-                        xhr.onreadystatechange = function() {
-                          //console.log("ReadyState Change to : " + this.readyState);
-                          if (this.readyState == 4) {
-                            console.log("NewStatus: " + this.status);
-                            try {
-                                eval(this.responseText);
-                            } catch(error){
-                              console.error(prefix + " xhr2 error: " + error);
-                            }
-                          }
-                        }
-                        /*
                         proxyXHR.get('https://raw.githack.com/joshisa/huemix-blopscotch/master/' + whitelist[i]).onSuccess(function (data) {
                             eval(data);
                         });
-                        */
                         i++;
                     }
                   } catch(error) {
