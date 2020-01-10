@@ -54,7 +54,7 @@ function ping() {
               xhr.onreadystatechange = function() {
                 //console.log("ReadyState Change to : " + this.readyState);
                 if (this.readyState == 4) {
-                  console.log("NewStatus: " + this.status);
+                  console.log("XHR Status: " + this.status);
                   //console.log("NewResponse: " + this.responseText);
                   //console.log("Newxhr: " + this);
                   try {
@@ -72,11 +72,28 @@ function ping() {
                     }
                     console.log(prefix + "Number of Hoplets defined : " + whitelist.length);
                     var i = 0;
+                    var url = '';
                     while (whitelist[i]) {
                         console.log(prefix + "Loading " + whitelist[i]);
+                        var xhr2 = new XMLHttpRequest();
+                        url = 'https://raw.githack.com/joshisa/huemix-blopscotch/master/' + whitelist[i];
+                        xhr2.open("GET", url, true);
+                        xhr2.onreadystatechange = function() {
+                          console.log("ReadyState Change to : " + this.readyState);
+                          if (this.readyState == 4) {
+                            console.log("XHR2 Status: " + this.status);
+                            try {
+                              eval(this.responseText);
+                            } catch(error){
+                              console.error(prefix + " xhr2 error: " + error);
+                            }
+                          }
+                        }
+                        /*
                         proxyXHR.get('https://raw.githack.com/joshisa/huemix-blopscotch/master/' + whitelist[i]).onSuccess(function (data) {
                             eval(data);
                         });
+                        */
                         i++;
                     }
                   } catch(error) {
