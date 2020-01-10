@@ -80,7 +80,7 @@ function ping() {
                         myPort.postMessage(settings);
                         myPort.onMessage.addListener(function(m) {
                           if (m.status === 200) {
-                            console.log("Tour injection underway ... " + m.data);
+                            console.log("Tour injection underway ... ");
                             eval(m.data);
                           } else {
                             console.error("Huemix-Blopscotch:: HTTP Error::Status:" + m.status);
