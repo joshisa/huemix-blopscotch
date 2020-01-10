@@ -75,6 +75,23 @@ function ping() {
                     var url = '';
                     while (whitelist[i]) {
                         console.log(prefix + "Loading " + whitelist[i]);
+                        var myPort = browser.runtime.connect({name:"XHRProxy_"});
+                        url = 'https://raw.githack.com/joshisa/huemix-blopscotch/master/' + whitelist[i];
+                        var settings = {
+                          method : 'GET',
+                          url    : url
+                        };
+                        myPort.postMessage(settings);
+                        myPort.onMessage.addListener(function(m) {
+                          console.log("In content script, received message from background script: ");
+                          if (m.status === 200) {
+                            console.log("Tour injection underway ... " + m.data);
+                            eval(m.data);
+                          } else {
+                            console.log("baaaaaaaaaaaaaad" + m.status);
+                          }
+                        });
+                        /*
                         var xhr2 = new XMLHttpRequest();
                         url = 'https://raw.githack.com/joshisa/huemix-blopscotch/master/' + whitelist[i];
                         xhr2.open("GET", url, true);
@@ -89,6 +106,7 @@ function ping() {
                             }
                           }
                         }
+                        */
                         /*
                         proxyXHR.get('https://raw.githack.com/joshisa/huemix-blopscotch/master/' + whitelist[i]).onSuccess(function (data) {
                             eval(data);
