@@ -13,7 +13,7 @@ window.browser = (function () {
 function ping() {
 
   browser.storage.local.get(['autoPlayEnabled','playBackDelay','categories'], function(items) {
-    autoPlayEnabledValue = items.autoPlayEnabled || "false";
+    autoPlayEnabledValue = items.autoPlayEnabled || "true";
     playBackDelayValue = items.playBackDelay || "8";
     categoryValues = items.categories || JSON.stringify(['default']);
     //Trying to create this hidden div to share extension options with tour script
