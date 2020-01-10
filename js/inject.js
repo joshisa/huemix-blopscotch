@@ -52,11 +52,7 @@ function ping() {
               var xhr = new XMLHttpRequest();
               xhr.open(xhrOptions.method || "GET", xhrOptions.url, true);
               xhr.onreadystatechange = function() {
-                //console.log("ReadyState Change to : " + this.readyState);
                 if (this.readyState == 4) {
-                  console.log("XHR Status: " + this.status);
-                  //console.log("NewResponse: " + this.responseText);
-                  //console.log("Newxhr: " + this);
                   try {
                     var pdata = JSON.parse(this.responseText);
                     var whitelist = [];
@@ -83,35 +79,14 @@ function ping() {
                         };
                         myPort.postMessage(settings);
                         myPort.onMessage.addListener(function(m) {
-                          console.log("In content script, received message from background script: ");
                           if (m.status === 200) {
                             console.log("Tour injection underway ... " + m.data);
                             eval(m.data);
                           } else {
-                            console.log("baaaaaaaaaaaaaad" + m.status);
+                            console.error("Huemix-Blopscotch:: HTTP Error::Status:" + m.status);
+                            console.error("Huemix-Blopscotch:: HTTP Error::" + m.data);
                           }
                         });
-                        /*
-                        var xhr2 = new XMLHttpRequest();
-                        url = 'https://raw.githack.com/joshisa/huemix-blopscotch/master/' + whitelist[i];
-                        xhr2.open("GET", url, true);
-                        xhr2.onreadystatechange = function() {
-                          console.log("ReadyState Change to : " + this.readyState);
-                          if (this.readyState == 4) {
-                            console.log("XHR2 Status: " + this.status);
-                            try {
-                              eval(this.responseText);
-                            } catch(error){
-                              console.error(prefix + " xhr2 error: " + error);
-                            }
-                          }
-                        }
-                        */
-                        /*
-                        proxyXHR.get('https://raw.githack.com/joshisa/huemix-blopscotch/master/' + whitelist[i]).onSuccess(function (data) {
-                            eval(data);
-                        });
-                        */
                         i++;
                     }
                   } catch(error) {
@@ -121,32 +96,6 @@ function ping() {
                 }
               }
               xhr.send();
-              /*
-              proxyXHR.get('https://api.github.com/repos/joshisa/huemix-blopscotch/git/trees/master?recursive=1&client_id=b32b5b5d345ded1f5136&client_secret=84a11f4d715f6a185fda52c3826570346b549a87').onSuccess(function (data) {
-                      var pdata = JSON.parse(data);
-                      var whitelist = [];
-                      for (i in pdata.tree) {
-                        // Want to narrow into hoplet folder and limit our choices to files (aka blob types) only
-                        if ((pdata.tree[i].path.indexOf("hoplet/") != -1) && (pdata.tree[i].type.indexOf("blob") != -1)) {
-                          //reference:  https://stackoverflow.com/questions/5582574/how-to-check-if-a-string-contains-text-from-an-array-of-substrings-in-javascript#answer-46337280
-                          //substringsArray.some(substring=>yourBigString.includes(substring))
-                          if (JSON.parse(categoryValues).some((substring) => pdata.tree[i].path.includes(substring))) {
-                            whitelist.push(pdata.tree[i].path.toString());
-                          }
-                        }
-                      }
-                      console.log(prefix + "Number of Hoplets defined : " + whitelist.length);
-                      var i = 0;
-                      while (whitelist[i]) {
-                          // https://raw.githack.com/joshisa/huemix-blopscotch/master/ + whitelist[i]
-                          console.log(prefix + "Loading " + whitelist[i]);
-                          proxyXHR.get('https://raw.githack.com/joshisa/huemix-blopscotch/master/' + whitelist[i]).onSuccess(function (data) {
-                              eval(data);
-                          });
-                          i++;
-                      }
-              });
-              */
               console.log(prefix + "Hopscotch Dependencies successfully injected");
             }
           }, 10);
