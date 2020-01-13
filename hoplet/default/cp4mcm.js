@@ -9,7 +9,7 @@
     c.setAttribute('id', 'itemHolder');
     var b = document.createElement('div');
     b.setAttribute('id', 'startTourBtn');
-    b.setAttribute('style', 'position:relative;display:inline-block;padding-right:50px;');
+    b.setAttribute('style', 'position:relative;display:inline;padding-right:50px;');
     var a = document.createElement('a');
     a.setAttribute('class','button primary');
     a.setAttribute('style','width:100%;');
