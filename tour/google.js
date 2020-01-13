@@ -16,7 +16,7 @@ var tour = {
       highlightMargin: 0
     },
     {
-      target: document.querySelector("input[name='q']");,
+      target: document.querySelector("input[name='q']"),
       title: '&#127798; Where to begin',
       content: 'At the very least, you\'ll need to decide what you want to search for.',
       placement: 'bottom',

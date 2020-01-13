@@ -5,9 +5,10 @@
       console.log(prefix + "Loading tour button onto Google web page");
       // Let's attach a Take Tour button to the page
       // <div id="startTourBtn" style="position:relative;display:inline-block;padding-right:50px;" class="nav-text-button"><a class="button primary" style="width:100%;" href="#">▶ Tour</a></div>
+      var googelem = document.getElementById("gb");
       var b = document.createElement('div');
       b.setAttribute('id', 'googtour');
-      b.setAttribute('style', 'position:relative;display:inline-block;padding-right:50px;');
+      b.setAttribute('style', 'position:relative;display:inline;padding-right:50px;');
       var a = document.createElement('a');
       a.setAttribute('class','button primary');
       a.setAttribute('style','width:100%;');
@@ -16,8 +17,7 @@
       a.appendChild(t);
       b.appendChild(a);
 
-      var googtophf = document.getElementById("hptl");
-      googtophf.append(b);
+      googelem.append(b);
       console.log(prefix + "Tour Button injected on Google WebSite...");
       console.log(prefix + "Happy Touring from the IBM CP4MCM Team!");
 
