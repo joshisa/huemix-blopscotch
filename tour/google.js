@@ -57,7 +57,7 @@ init = function() {
         id: calloutId,
         target: startBtnId,
         placement: 'bottom',
-        title: '&#127798; Friend, interested in a tour?',
+        title: '&#127798; Vikram, interested in a tour?',
         content: 'We shall not cease from exploration<br>And the end of all our exploring<br>Will be to arrive where we started<br>And know the place for the first time.<br>∞T.S. Eliot∞',
         yOffset: 10,
         arrowOffset: 20,
