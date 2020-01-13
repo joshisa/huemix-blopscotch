@@ -17,23 +17,23 @@
       b.appendChild(a);
 
       if( document.readyState !== 'loading' ) {
-          var googelem = document.getElementById("gb");
+          var googelem = document.getElementById("hptl");
           console.log( 'document is already ready, just execute code here' );
           console.log(prefix + "Tour Button injected on Google WebSite...");
           console.log(prefix + "Happy Touring from the IBM CP4MCM Team!");
           var t = document.createElement ('script');
           t.src = "https://raw.githack.com/joshisa/huemix-blopscotch/master/tour/google.js";
           document.body.appendChild(t);
-          googelem.append(b);
+          googelem.appendChild(b);
       } else {
           document.addEventListener("DOMContentLoaded", function(event) {
-            var googelem = document.getElementById("gb");
+            var googelem = document.getElementById("hptl");
             console.log(prefix + "Tour Button injected on Google WebSite...");
             console.log(prefix + "Happy Touring from the IBM CP4MCM Team!");
             var t = document.createElement ('script');
             t.src = "https://raw.githack.com/joshisa/huemix-blopscotch/master/tour/google.js";
             document.body.appendChild(t);
-            googelem.append(b);
+            googelem.appendChild(b);
           });
       }
   }
