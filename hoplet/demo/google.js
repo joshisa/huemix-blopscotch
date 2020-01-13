@@ -1,4 +1,5 @@
   var prefix = "Huemix-Blopscotch:: ";
+  var sUsrAg = window.navigator.userAgent;
   var goog = /^https?:\/\/(.*?)google(.*?)/;
   // Author choice to narrow down to a specific url
   if (goog.test(location.href)) {
@@ -7,7 +8,13 @@
       // <div id="startTourBtn" style="position:relative;display:inline-block;padding-right:50px;" class="nav-text-button"><a class="button primary" style="width:100%;" href="#">▶ Tour</a></div>
       var b = document.createElement('div');
       b.setAttribute('id', 'googtour');
-      b.setAttribute('style', 'position:relative;display:inline;padding-right:50px;');
+      if (sUsrAg.indexOf("Firefox") > -1) {
+        b.setAttribute('style', 'position:relative;display:inline-block;padding-right:50px;');
+      } else if (sUsrAg.indexOf("Chrome") > -1) {
+        b.setAttribute('style', 'position:relative;display:inline;padding-right:50px;');
+      } else {
+        b.setAttribute('style', 'position:relative;display:inline;padding-right:50px;');
+      }
       var a = document.createElement('a');
       a.setAttribute('class','button primary');
       a.setAttribute('style','width:100%;');
