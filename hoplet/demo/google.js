@@ -5,7 +5,6 @@
       console.log(prefix + "Loading tour button onto Google web page");
       // Let's attach a Take Tour button to the page
       // <div id="startTourBtn" style="position:relative;display:inline-block;padding-right:50px;" class="nav-text-button"><a class="button primary" style="width:100%;" href="#">▶ Tour</a></div>
-      var googelem = document.getElementById("gb");
       var b = document.createElement('div');
       b.setAttribute('id', 'googtour');
       b.setAttribute('style', 'position:relative;display:inline;padding-right:50px;');
@@ -17,12 +16,24 @@
       a.appendChild(t);
       b.appendChild(a);
 
-      document.addEventListener("DOMContentLoaded", function(event) {
-        googelem.append(b);
-        console.log(prefix + "Tour Button injected on Google WebSite...");
-        console.log(prefix + "Happy Touring from the IBM CP4MCM Team!");
-        var t = document.createElement ('script');
-        t.src = "https://raw.githack.com/joshisa/huemix-blopscotch/master/tour/google.js";
-        document.body.appendChild(t);
-      });
+      if( document.readyState !== 'loading' ) {
+          var googelem = document.getElementById("gb");
+          console.log( 'document is already ready, just execute code here' );
+          console.log(prefix + "Tour Button injected on Google WebSite...");
+          console.log(prefix + "Happy Touring from the IBM CP4MCM Team!");
+          var t = document.createElement ('script');
+          t.src = "https://raw.githack.com/joshisa/huemix-blopscotch/master/tour/google.js";
+          document.body.appendChild(t);
+          googelem.append(b);
+      } else {
+          document.addEventListener("DOMContentLoaded", function(event) {
+            var googelem = document.getElementById("gb");
+            console.log(prefix + "Tour Button injected on Google WebSite...");
+            console.log(prefix + "Happy Touring from the IBM CP4MCM Team!");
+            var t = document.createElement ('script');
+            t.src = "https://raw.githack.com/joshisa/huemix-blopscotch/master/tour/google.js";
+            document.body.appendChild(t);
+            googelem.append(b);
+          });
+      }
   }
