@@ -17,11 +17,12 @@
       a.appendChild(t);
       b.appendChild(a);
 
-      googelem.append(b);
-      console.log(prefix + "Tour Button injected on Google WebSite...");
-      console.log(prefix + "Happy Touring from the IBM CP4MCM Team!");
-
-      var t = document.createElement ('script');
-      t.src = "https://raw.githack.com/joshisa/huemix-blopscotch/master/tour/google.js";
-      document.body.appendChild(t);
+      document.addEventListener("DOMContentLoaded", function(event) {
+        googelem.append(b);
+        console.log(prefix + "Tour Button injected on Google WebSite...");
+        console.log(prefix + "Happy Touring from the IBM CP4MCM Team!");
+        var t = document.createElement ('script');
+        t.src = "https://raw.githack.com/joshisa/huemix-blopscotch/master/tour/google.js";
+        document.body.appendChild(t);
+      });
   }
