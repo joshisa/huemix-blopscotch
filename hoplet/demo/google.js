@@ -10,8 +10,8 @@
     a.setAttribute('aria-label','Google Tour');
     a.setAttribute('name', 'googtour');
     a.setAttribute('type', 'submit');
-
-    googtophf.appendChild(a);
+    a.setAttribute('value', 'Web Tour');
+    googtophf.append(a);
     console.log(prefix + "Tour Button injected on Google WebSite...");
     console.log(prefix + "Happy Touring from the IBM CP4MCM Team!");
 
