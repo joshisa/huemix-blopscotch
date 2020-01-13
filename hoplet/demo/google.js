@@ -1,3 +1,4 @@
+  var prefix = "Huemix-Blopscotch:: ";
   var goog = /^https?:\/\/(.*?)google(.*?)/;
   // Author choice to narrow down to a specific url
   if (goog.test(location.href)) {
